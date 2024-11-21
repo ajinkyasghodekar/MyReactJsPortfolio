@@ -49,7 +49,9 @@ namespace MyPortfolioApi.Controllers
             {
                 Name = contactMeViewModel.Name,
                 Email = contactMeViewModel.Email,
-                Message = contactMeViewModel.Message
+                Message = contactMeViewModel.Message,
+                CreatedOn = DateTime.Now,
+                CreatedBy = contactMeViewModel.Email
             };
 
             _context.ContactMe.Add(contactMeDbModel);

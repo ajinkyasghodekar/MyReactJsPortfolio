@@ -39,7 +39,7 @@ function ContactMe() {
 
   return (
     <section id="contact" className="Contact">
-      <h2>Contact Me</h2>
+      <h4>Contact Me</h4>
       {successMessage && <p className="success">{successMessage}</p>}
       {errorMessage && <p className="error">{errorMessage}</p>}
       <form onSubmit={handleSubmit}>
@@ -65,6 +65,7 @@ function ContactMe() {
         </label>
         <label>
           <textarea
+            type="textarea"
             name="message"
             placeholder="Message"
             value={formData.message}

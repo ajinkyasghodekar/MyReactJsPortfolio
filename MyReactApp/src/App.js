@@ -2,6 +2,7 @@
 import Header from './PortfolioJs/Header';
 import Home from './PortfolioJs/Home';
 import About from './PortfolioJs/About';
+import Education from './PortfolioJs/Education';
 import Projects from './PortfolioJs/Projects';
 import Contact from './PortfolioJs/ContactMe';
 import Skills from './PortfolioJs/Skills';
@@ -40,9 +41,11 @@ function App() {
           <Header />
           <Home />
           <About />
+          <Education />
           <Skills />
           <Projects />
           <Contact />
+          {/* <Footer /> */}
         </div>
 
       {showButton && (

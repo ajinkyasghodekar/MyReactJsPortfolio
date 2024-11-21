@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using MyPortfolioApi.Models;
 
 namespace MyPortfolioApi.Domain
@@ -11,5 +10,7 @@ namespace MyPortfolioApi.Domain
         }
         public DbSet<ProjectsDbModel> Projects { get; set; }
         public DbSet<ContactMeDbModel> ContactMe { get; set; }
+        public DbSet<EducationDbModel> Education { get; set; }
+        public DbSet<SkillsDbModel> Skills { get; set; }
     }
 }

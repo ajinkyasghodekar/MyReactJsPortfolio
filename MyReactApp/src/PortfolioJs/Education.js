@@ -1,17 +1,18 @@
-// src/PortfolioJs/Skills.js
+// src/PortfolioJs/Education.js
 import React from 'react';
-import '../PortfolioCss/Skills.css';
+import '../PortfolioCss/Education.css';
 
-function Skills() {
+function Education() {
   return (
-    <section id="skills" className="Skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>C#</li>
-        <li>Asp .Net</li>
-      </ul>
+    <section id='education' className='Education'>
+      <h4>
+        Education
+      </h4>
+      <p>
+        Comming Soon !!!
+      </p>
     </section>
   );
 }
 
-export default Skills;
+export default Education;

@@ -31,14 +31,14 @@ function Project() {
 
   return (
     <section id="projects" className="Projects">
-      <h2>Projects</h2>
+      <h4>Projects</h4>
       {loading && <p>Loading...</p>}
       {errorMessage && <p className="error">{errorMessage}</p>}
       <div className="project-list">
         {projects.length > 0 ? (
           projects.map(project => (
           <div key={project.id} className="project">
-            <h3>{project.name}</h3>
+            <h4>{project.name}</h4>
             <p><b>Project Descripion:</b> {project.description}</p>
             <p><b>Project Autor:</b> {project.author}</p>
             <p><b>Project Author Url:</b> {project.authorUrl}</p>

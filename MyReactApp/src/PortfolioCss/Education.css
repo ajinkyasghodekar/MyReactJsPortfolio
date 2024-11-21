@@ -1,0 +1,9 @@
+.Education {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+    background-color: #f4f4f4;
+}
