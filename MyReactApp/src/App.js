@@ -6,6 +6,7 @@ import Education from './PortfolioJs/Education';
 import Projects from './PortfolioJs/Projects';
 import Contact from './PortfolioJs/ContactMe';
 import Skills from './PortfolioJs/Skills';
+import Footer from './Footer';
 import './App.css';  
 
 function App() {
@@ -45,7 +46,7 @@ function App() {
           <Skills />
           <Projects />
           <Contact />
-          {/* <Footer /> */}
+          <Footer />
         </div>
 
       {showButton && (
