@@ -75,9 +75,6 @@ function ContactMe() {
         </label>
         <button type="submit">Send</button>
       </form>
-      <div className="Contact-footer">
-        <p>&copy; 2024. All rights reserved.</p>
-      </div>
     </section>
   );
 }
