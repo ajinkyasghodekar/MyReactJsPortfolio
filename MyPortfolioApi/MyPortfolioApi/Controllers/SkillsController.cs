@@ -34,9 +34,7 @@ namespace MyPortfolioApi.Controllers
                 skillsModel = new SkillsViewModel
                 {
                     Id = skill.Id,
-                    Name = skill.Name,
-                    Category = skill.Category,
-                    IconUrl = skill.IconUrl
+                    Name = skill.Name
                 };
                 skillsModelList.Add(skillsModel);
             }
