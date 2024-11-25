@@ -26,15 +26,29 @@
       "url": "https://github.com/ajinkyasghodekar/MyMagicVilla_API",
       "authorUrl": "https://www.linkedin.com/in/ajinkya-ghodekar",
       "descriptionUrl": "https://github.com/ajinkyasghodekar/MyMagicVilla_API"
+    },
+    {
+      "id": 4,
+      "name": "Authentication Service",
+      "description": "An ASP.NET MVC application for user authentication, including features like login, password validation, and user input validation.",
+      "author": "Ajinkya Ghodekar",
+      "url": "https://github.com/ajinkyasghodekar/AuthServiceWebApp", 
+      "authorUrl": "https://www.linkedin.com/in/ajinkya-ghodekar",
+      "descriptionUrl": "https://github.com/ajinkyasghodekar/AuthServiceWebApp"
     }
+    
   ],
   "skills": [
     { "id": 1, "name": "C#" },
     { "id": 2, "name": ".NET" },
-    { "id": 3, "name": "MS SQL" },
-    { "id": 4, "name": "React Js" },
-    { "id": 5, "name": "HTML & CSS" },
-    { "id": 6, "name": "JavaScript" }
+    { "id": 3, "name": ".NET Core" },
+    { "id": 4, "name": "ASP.NET MVC" },
+    { "id": 5, "name": "EF Core and LINQ" },
+    { "id": 6, "name": "MS SQL" },
+    { "id": 7, "name": "React Js" },
+    { "id": 8, "name": "HTML, CSS" },
+    { "id": 9, "name": "JavaScript" },
+    { "id": 10, "name": "JavaScript" }
   ],
   "education": [
     {
