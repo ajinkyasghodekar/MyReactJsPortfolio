@@ -1,6 +1,5 @@
-// src/PortfolioJs/Project.js
 import React, { useState, useEffect } from 'react';
-import '../PortfolioCss/Projects.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
 function Project() {
@@ -9,8 +8,9 @@ function Project() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('https://localhost:7083/api/Projects')
-      .then(response => {
+    axios
+      .get('https://localhost:7083/api/Projects')
+      .then((response) => {
         const { status, data } = response;
 
         if (status === 200 && data.isSuccess) {
@@ -20,7 +20,7 @@ function Project() {
           setErrorMessage(data.message || 'Failed to load projects. Please try again.');
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.error('There was an error fetching the projects!', error);
         setErrorMessage('There was an error fetching the projects.');
       })
@@ -30,24 +30,56 @@ function Project() {
   }, []);
 
   return (
-    <section id="projects" className="Projects">
-      <h4>Projects</h4>
-      {loading && <p>Loading...</p>}
-      {errorMessage && <p className="error">{errorMessage}</p>}
-      <div className="project-list">
-        {projects.length > 0 ? (
-          projects.map(project => (
-          <div key={project.id} className="project">
-            <h4>{project.name}</h4>
-            <p><b>Project Descripion:</b> {project.description}</p>
-            <p><b>Project Autor:</b> {project.author}</p>
-            <p><b>Project Author Url:</b> {project.authorUrl}</p>
-            <p><b>Project Description Url:</b> {project.descriptionUrl}</p>
-          </div>
-    ))
-        ) : (
-          !loading && <p>No projects found.</p>
-        )}
+    <section id="projects" className="Projects py-5 bg-light">
+      <div className="container">
+        <h4 className="text-center mb-4">Projects</h4>
+        {loading && <p className="text-center">Loading...</p>}
+        {errorMessage && <p className="text-danger text-center">{errorMessage}</p>}
+        <div className="row">
+          {projects.length > 0 ? (
+            projects.map((project) => (
+              <div key={project.id} className="col-md-6 col-lg-4 mb-4">
+                <div className="card h-100 shadow-sm">
+                  <div className="card-body">
+                    <h5 className="card-title">{project.name}</h5>
+                    <p className="card-text">
+                      <strong>Description:</strong> {project.description}
+                    </p>
+                    <p>
+                      <strong>Author:</strong> {project.author}
+                    </p>
+                    {project.authorUrl && (
+                      <p>
+                        <strong>Author URL:</strong>{' '}
+                        <a
+                          href={project.authorUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {project.authorUrl}
+                        </a>
+                      </p>
+                    )}
+                    {project.descriptionUrl && (
+                      <p>
+                        <strong>Details:</strong>{' '}
+                        <a
+                          href={project.descriptionUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {project.descriptionUrl}
+                        </a>
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))
+          ) : (
+            !loading && <p className="text-center">No projects found.</p>
+          )}
+        </div>
       </div>
     </section>
   );
