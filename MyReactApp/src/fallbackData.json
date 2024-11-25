@@ -1,0 +1,76 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "MyReactJsPortfolio",
+      "description": "A portfolio website built with React.js to showcase various projects and skills.",
+      "author": "Ajinkya Ghodekar",
+      "url": "https://github.com/ajinkyasghodekar/MyReactJsPortfolio",
+      "authorUrl": "https://www.linkedin.com/in/ajinkya-ghodekar",
+      "descriptionUrl": "https://github.com/ajinkyasghodekar/MyReactJsPortfolio"
+    },
+    {
+      "id": 2,
+      "name": "Bulky_MVC",
+      "description": "An e-commerce application built with ASP.NET MVC for managing products, orders, and customer information.",
+      "author": "Ajinkya Ghodekar",
+      "url": "https://github.com/ajinkyasghodekar/Bulky_MVC",
+      "authorUrl": "https://www.linkedin.com/in/ajinkya-ghodekar",
+      "descriptionUrl": "https://github.com/ajinkyasghodekar/Bulky_MVC"
+    },
+    {
+      "id": 3,
+      "name": "MyMagicVilla_API",
+      "description": "A .NET Core API for managing a hotel booking system, providing services for room booking, payment, and user management.",
+      "author": "Ajinkya Ghodekar",
+      "url": "https://github.com/ajinkyasghodekar/MyMagicVilla_API",
+      "authorUrl": "https://www.linkedin.com/in/ajinkya-ghodekar",
+      "descriptionUrl": "https://github.com/ajinkyasghodekar/MyMagicVilla_API"
+    },
+    {
+      "id": 4,
+      "name": "Authentication Service",
+      "description": "An ASP.NET MVC application for user authentication, including features like login, password validation, and user input validation.",
+      "author": "Ajinkya Ghodekar",
+      "url": "https://github.com/ajinkyasghodekar/AuthServiceWebApp", 
+      "authorUrl": "https://www.linkedin.com/in/ajinkya-ghodekar",
+      "descriptionUrl": "https://github.com/ajinkyasghodekar/AuthServiceWebApp"
+    }
+    
+  ],
+  "skills": [
+    { "id": 1, "name": "C#" },
+    { "id": 2, "name": ".NET" },
+    { "id": 3, "name": ".NET Core" },
+    { "id": 4, "name": "ASP.NET MVC" },
+    { "id": 5, "name": "EF Core and LINQ" },
+    { "id": 6, "name": "MS SQL" },
+    { "id": 7, "name": "React Js" },
+    { "id": 8, "name": "HTML, CSS" },
+    { "id": 9, "name": "JavaScript" },
+    { "id": 10, "name": "JavaScript" }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "educationType": "Bachelor's Degree",
+      "branch": "Computer Engineering",
+      "university": "Savitribai Phule Pune University",
+      "passOutYear": 2020
+    },
+    {
+      "id": 2,
+      "educationType": "Higher Secondary Certificate (HSC)",
+      "branch": "Science",
+      "university": "Maharashtra State Board",
+      "passOutYear": 2016
+    },
+    {
+      "id": 3,
+      "educationType": "Secondary School Certificate (SSC)",
+      "branch": "General",
+      "university": "Maharashtra State Board",
+      "passOutYear": 2014
+    }
+  ]
+} 

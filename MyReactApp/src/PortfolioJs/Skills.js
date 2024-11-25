@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
 function Skills() {
@@ -8,9 +7,8 @@ function Skills() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get('https://localhost:7083/api/Skills')
-      .then((response) => {
+    axios.get('https://localhost:7083/api/Skills')
+      .then(response => {
         const { status, data } = response;
 
         if (status === 200 && data.isSuccess) {
@@ -20,9 +18,8 @@ function Skills() {
           setErrorMessage(data.message || 'Failed to load skills. Please try again.');
         }
       })
-      .catch((error) => {
-        console.error('There was an error fetching the skills!', error);
-        setErrorMessage('There was an error fetching the skills.');
+      .catch(() => {
+        setSkills(require('../fallbackData.json').skills); // Load fallback data
       })
       .finally(() => {
         setLoading(false);
@@ -30,31 +27,25 @@ function Skills() {
   }, []);
 
   return (
-    <section id="skills" className="skills py-5 bg-light">
-      <div className="container">
-        <h4 className="text-center mb-4">Skills</h4>
-        {loading && <p className="text-center">Loading...</p>}
-        {errorMessage && <p className="text-danger text-center">{errorMessage}</p>}
-        <div className="row">
-          {skills.length > 0 ? (
-            skills.map((skill) => (
-              <div key={skill.id} className="col-md-4 mb-3">
-                <div className="card shadow-sm">
-                  <div className="card-body">
-                    <h5 className="card-title">{skill.name}</h5>
-                    {skill.category && (
-                      <p className="card-text">
-                        <strong>Category:</strong> {skill.category}
-                      </p>
-                    )}
-                  </div>
+    <section id="skills" className="Skills container my-5">
+      <h4 className="text-center mb-4">Skills</h4>
+      {loading && <p className="text-center text-secondary">Loading...</p>}
+      {errorMessage && <p className="text-danger text-center">{errorMessage}</p>}
+
+      <div className="row">
+        {skills.length > 0 ? (
+          skills.map(skill => (
+            <div key={skill.id} className="col-md-4 col-sm-6 mb-3">
+              <div className="card shadow-sm h-100">
+                <div className="card-body text-center">
+                  <p className="card-text">{skill.name}</p>
                 </div>
               </div>
-            ))
-          ) : (
-            !loading && <p className="text-center">No skills found.</p>
-          )}
-        </div>
+            </div>
+          ))
+        ) : (
+          !loading && <p className="text-center">No skills found.</p>
+        )}
       </div>
     </section>
   );
