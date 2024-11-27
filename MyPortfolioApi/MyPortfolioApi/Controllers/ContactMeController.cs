@@ -48,6 +48,7 @@ namespace MyPortfolioApi.Controllers
             var contactMeDbModel = new ContactMeDbModel
             {
                 Name = contactMeViewModel.Name,
+                Subject = contactMeViewModel.Subject,
                 Email = contactMeViewModel.Email,
                 Message = contactMeViewModel.Message,
                 CreatedOn = DateTime.Now,
@@ -59,7 +60,7 @@ namespace MyPortfolioApi.Controllers
 
             return new ApiResponseModel<ContactMeViewModel>
             {
-                Message = "Contact details saved successfully",
+                Message = "Message sent successfully !!!",
                 IsSuccess = true,
                 StatusCode = StatusCodes.Status200OK,
                 Result = contactMeViewModel
