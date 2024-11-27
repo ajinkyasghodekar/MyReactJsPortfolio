@@ -47,7 +47,6 @@ function Contact() {
 
         <div className="card mx-auto shadow-lg" style={{ maxWidth: '800px' }}>
           <div className="card-body">
-            <h5 className="card-title text-center mb-4">Contact Details</h5>
 
             <div className="row mb-4 text-center">
               <div className="col-md-4">
