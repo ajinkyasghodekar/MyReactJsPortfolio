@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
 function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '', subject: '' });
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -23,15 +23,15 @@ function Contact() {
         const { status, data } = response;
 
         if (status === 200 && data.isSuccess) {
-          setSuccessMessage(data.message || 'Message sent successfully!');
-          setFormData({ name: '', email: '', message: '' });
+          setSuccessMessage(data.message || 'Message sent successfully !!!');
+          setFormData({ name: '', email: '', message: '', subject: '' });
           setErrorMessage('');
         } else {
           setErrorMessage(data.message || 'Failed to send the message. Please try again.');
         }
       })
       .catch(error => {
-        console.error('There was an error sending the message!', error);
+        console.error('There was an error sending the message.', error);
         setErrorMessage('There was an error sending the message.');
       });
   };
@@ -40,6 +40,9 @@ function Contact() {
     <section id="contact" className="py-5 bg-light">
       <div className="container">
         <h4 className="text-center mb-4">Contact</h4>
+        <p className="text-center text-muted fs-5 mb-4">
+          <b>"Give me an opportunity, and I’ll not only meet your expectations but surpass them with excellence."</b>
+        </p>
         {successMessage && <div className="alert alert-success text-center">{successMessage}</div>}
         {errorMessage && <div className="alert alert-danger text-center">{errorMessage}</div>}
         <form onSubmit={handleSubmit} className="row g-3">
@@ -50,7 +53,7 @@ function Contact() {
               id="name"
               name="name"
               className="form-control"
-              placeholder="Enter your full name"
+              placeholder="Full Name"
               value={formData.name}
               onChange={handleChange}
               required
@@ -63,8 +66,20 @@ function Contact() {
               id="email"
               name="email"
               className="form-control"
-              placeholder="Enter your email"
+              placeholder="Email"
               value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="col-12">
+            <label htmlFor="subject" className="form-label"></label>
+            <input
+              id="subject"
+              name="subject"
+              className="form-control"
+              placeholder="Subject"
+              value={formData.subject}
               onChange={handleChange}
               required
             />
@@ -75,7 +90,7 @@ function Contact() {
               id="message"
               name="message"
               className="form-control"
-              placeholder="Enter your message"
+              placeholder="Message"
               rows="5"
               value={formData.message}
               onChange={handleChange}

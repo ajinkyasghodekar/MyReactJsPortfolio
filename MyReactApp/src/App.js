@@ -8,7 +8,7 @@ import Projects from './PortfolioJs/Projects';
 import Contact from './PortfolioJs/Contact';
 import Skills from './PortfolioJs/Skills';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Spinner } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'font-awesome/css/font-awesome.min.css';
 import './App.css';
@@ -128,13 +128,6 @@ function App() {
           transition: 'width 0.2s ease',
         }}
       ></div>
-
-      {loading && (
-        <div className="loading-spinner">
-          <Spinner animation="border" variant="light" />
-          <p style={{ color: '#fff', fontSize: '20px' }}>Loading...</p>
-        </div>
-      )}
     </div>
   );
 }
