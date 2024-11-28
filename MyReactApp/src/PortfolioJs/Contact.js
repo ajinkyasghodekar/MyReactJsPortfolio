@@ -42,7 +42,7 @@ function Contact() {
             subject: formData.subject,
             message: formData.message,
           },
-          process.env.REACT_APP_EMAILJS_PUBLIC_KEY 
+          'SZsaYd_j4rJOU9mFL' 
         )
           .then(() => {
             setSuccessMessage('Message sent successfully !!!');

@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'font-awesome/css/font-awesome.min.css';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import './App.css';
 
 function App() {
@@ -94,6 +95,10 @@ function App() {
 
       <section id="footer" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`} style={{ background: '#333', color: '#fff', padding: '40px 0' }}>
         <Footer />
+      </section>
+
+      <section>
+        <SpeedInsights/>
       </section>
 
       {showButton && (
