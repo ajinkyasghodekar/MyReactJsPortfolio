@@ -13,6 +13,7 @@ import Education from './PortfolioJs/Education';
 import Projects from './PortfolioJs/Projects';
 import Contact from './PortfolioJs/Contact';
 import Skills from './PortfolioJs/Skills';
+import WorkExperience from './PortfolioJs/WorkExperience';
 
 function App() {
   const [showButton, setShowButton] = useState(false);
@@ -67,6 +68,10 @@ function App() {
 
       <section id="projects" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`}>
         <Projects />
+      </section>
+
+      <section id="workExperience" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`}>
+        <WorkExperience />
       </section>
 
       <section id="contact" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`}>

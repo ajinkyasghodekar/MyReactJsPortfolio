@@ -26,7 +26,6 @@ function Home() {
       ></div>
 
       <div className="container">
-        {/* Animated Heading */}
         <motion.h4
           className="display-4 animate__animated animate__fadeInDown"
           initial={{ scale: 0 }}

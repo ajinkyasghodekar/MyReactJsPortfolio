@@ -7,7 +7,8 @@
       "author": "Ajinkya Ghodekar",
       "url": "https://my-react-js-portfolio-nu.vercel.app/",
       "authorUrl": "https://www.linkedin.com/in/ajinkya-ghodekar",
-      "descriptionUrl": "https://my-react-js-portfolio-nu.vercel.app/"
+      "descriptionUrl": "https://my-react-js-portfolio-nu.vercel.app/",
+      "imageUrl": "default.jpg"
     },
     {
       "id": 2,
@@ -16,7 +17,8 @@
       "author": "Ajinkya Ghodekar",
       "url": "https://github.com/ajinkyasghodekar/Bulky_MVC",
       "authorUrl": "https://www.linkedin.com/in/ajinkya-ghodekar",
-      "descriptionUrl": "https://github.com/ajinkyasghodekar/Bulky_MVC"
+      "descriptionUrl": "https://github.com/ajinkyasghodekar/Bulky_MVC",
+      "imageUrl": "default.jpg"
     },
     {
       "id": 3,
@@ -25,7 +27,8 @@
       "author": "Ajinkya Ghodekar",
       "url": "https://github.com/ajinkyasghodekar/MyMagicVilla_API",
       "authorUrl": "https://www.linkedin.com/in/ajinkya-ghodekar",
-      "descriptionUrl": "https://github.com/ajinkyasghodekar/MyMagicVilla_API"
+      "descriptionUrl": "https://github.com/ajinkyasghodekar/MyMagicVilla_API",
+      "imageUrl": "default.jpg"
     },
     {
       "id": 4,
@@ -34,7 +37,8 @@
       "author": "Ajinkya Ghodekar",
       "url": "https://github.com/ajinkyasghodekar/AuthServiceWebApp", 
       "authorUrl": "https://www.linkedin.com/in/ajinkya-ghodekar",
-      "descriptionUrl": "https://github.com/ajinkyasghodekar/AuthServiceWebApp"
+      "descriptionUrl": "https://github.com/ajinkyasghodekar/AuthServiceWebApp",
+      "imageUrl": "default.jpg"
     }
     
   ],
@@ -71,6 +75,17 @@
       "branch": "General",
       "university": "Maharashtra State Board",
       "passOutYear": 2014
+    }
+  ],
+  "workExperience": [
+    {
+      "id": 1,
+      "jobTitle": "Sr Software Developer",
+      "company": "ABC Tech Solutions",
+      "startDate": "June 2021",
+      "endDate": "Present",
+      "description": "Developing RESTful web services and applications using C#, .NET Core, and SQL Server. Collaborating with cross-functional teams to ensure timely delivery of software solutions.",
+      "companyUrl": "https://www.abctech.com"
     }
   ]
 } 
