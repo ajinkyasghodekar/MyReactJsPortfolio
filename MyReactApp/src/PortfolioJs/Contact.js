@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-import { FaPhoneAlt, FaWhatsapp, FaEnvelope } from 'react-icons/fa'; 
+import emailjs from 'emailjs-com';
+import { FaPhoneAlt, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 
 function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '', subject: '' });
@@ -20,20 +21,37 @@ function Contact() {
     e.preventDefault();
 
     axios.post('https://localhost:7083/api/ContactMe', formData)
-      .then(response => {
+      .then((response) => {
         const { status, data } = response;
-
         if (status === 200 && data.isSuccess) {
           setSuccessMessage(data.message || 'Message sent successfully !!!');
           setFormData({ name: '', email: '', message: '', subject: '' });
           setErrorMessage('');
         } else {
-          setErrorMessage(data.message || 'Failed to send the message. Please try again.');
+          throw new Error('API did not return a successful response');
         }
       })
-      .catch(error => {
-        console.error('There was an error sending the message.', error);
-        setErrorMessage('There was an error sending the message.');
+      .catch(() => {
+        emailjs.send(
+          'service_s2jj46l', 
+          'template_7y2f2ue',
+          {
+            from_name: formData.name,
+            to_name: 'Ajinkya',
+            from_email: formData.email,
+            subject: formData.subject,
+            message: formData.message,
+          },
+          'SZsaYd_j4rJOU9mFL' 
+        )
+          .then(() => {
+            setSuccessMessage('Message sent successfully !!!');
+            setFormData({ name: '', email: '', message: '', subject: '' });
+            setErrorMessage('');
+          })
+          .catch(() => {
+            setErrorMessage('Both APIs failed. Please try again later.');
+          });
       });
   };
 
