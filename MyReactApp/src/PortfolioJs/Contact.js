@@ -33,8 +33,8 @@ function Contact() {
       })
       .catch(() => {
         emailjs.send(
-          process.env.REACT_APP_EMAILJS_SERVICE_ID, 
-          process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+          'service_s2jj46l', 
+          'template_7y2f2ue',
           {
             from_name: formData.name,
             to_name: 'Ajinkya',
