@@ -1,4 +1,10 @@
 ﻿import React, { useState, useEffect } from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'font-awesome/css/font-awesome.min.css';
+import './App.css';
 import Header from './HeaderAndFooter/Header';
 import Footer from './HeaderAndFooter/Footer';
 import Home from './PortfolioJs/Home';
@@ -7,12 +13,6 @@ import Education from './PortfolioJs/Education';
 import Projects from './PortfolioJs/Projects';
 import Contact from './PortfolioJs/Contact';
 import Skills from './PortfolioJs/Skills';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'react-bootstrap';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import 'font-awesome/css/font-awesome.min.css';
-import { SpeedInsights } from '@vercel/speed-insights/react';
-import './App.css';
 
 function App() {
   const [showButton, setShowButton] = useState(false);
@@ -97,10 +97,6 @@ function App() {
         <Footer />
       </section>
 
-      <section>
-        <SpeedInsights/>
-      </section>
-
       {showButton && (
         <button
           onClick={scrollToTop}
@@ -133,6 +129,8 @@ function App() {
           transition: 'width 0.2s ease',
         }}
       ></div>
+      {/* Speed insight check for Vercel */}
+        <SpeedInsights/>
     </div>
   );
 }
