@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import emailjs from 'emailjs-com';
 import { FaPhoneAlt, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
+import '../PortfolioStyle/Contact.css'
 
 function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '', subject: '' });

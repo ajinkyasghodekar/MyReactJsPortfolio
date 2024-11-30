@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import '../PortfolioStyle/Education.css'
 
 function Education() {
   const [education, setEducation] = useState([]);
@@ -27,8 +28,9 @@ function Education() {
   }, []);
 
   return (
-    <section id="education" className="Education container my-5">
+    <section id="education" className="container my-5">
       <h4 className="text-center mb-4">Education</h4>
+
       {loading && <p className="text-center text-secondary">Loading...</p>}
       {errorMessage && <p className="text-danger text-center">{errorMessage}</p>}
 
@@ -36,9 +38,9 @@ function Education() {
         {education.length > 0 ? (
           education.map(edu => (
             <div key={edu.id} className="col-md-6 col-lg-4 mb-4">
-              <div className="card shadow-sm h-100">
+              <div className="card shadow-lg h-100 hover-shadow ">
                 <div className="card-body">
-                  <h5 className="card-title">{edu.educationType} - {edu.branch}</h5>
+                  <h5 className="card-title text-success">{edu.educationType} - {edu.branch}</h5>
                   <p className="card-text"><b>University:</b> {edu.university}</p>
                   <p className="card-text"><b>Pass Out Year:</b> {edu.passOutYear}</p>
                 </div>
@@ -46,7 +48,7 @@ function Education() {
             </div>
           ))
         ) : (
-          !loading && <p className="text-center">No education details found.</p>
+          !loading && <p className="text-center text-warning">No education details found.</p>
         )}
       </div>
     </section>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import '../PortfolioStyle/Project.css';
 
 function Project() {
   const [projects, setProjects] = useState([]);
@@ -27,8 +28,9 @@ function Project() {
   }, []);
 
   return (
-    <section id="projects" className="Projects container my-5">
+    <section id="projects" className="container my-5">
       <h4 className="text-center mb-4">Projects</h4>
+
       {loading && <p className="text-center text-secondary">Loading...</p>}
       {errorMessage && <p className="text-danger text-center">{errorMessage}</p>}
 
@@ -36,7 +38,13 @@ function Project() {
         {projects.length > 0 ? (
           projects.map(project => (
             <div key={project.id} className="col-md-6 col-lg-4 mb-4">
-              <div className="card shadow-sm h-100">
+              <div className="card shadow-lg h-100 project-card">
+                <img
+                  src={`/images/${project.imageUrl}`} 
+                  alt={project.name}
+                  className="card-img-top project-card-img"
+                />
+
                 <div className="card-body">
                   <h5 className="card-title">{project.name}</h5>
                   <p className="card-text"><b>Description:</b> {project.description}</p>
@@ -49,7 +57,7 @@ function Project() {
             </div>
           ))
         ) : (
-          !loading && <p className="text-center">No projects found.</p>
+          !loading && <p className="text-center text-warning">No projects found.</p>
         )}
       </div>
     </section>

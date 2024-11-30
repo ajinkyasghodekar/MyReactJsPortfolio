@@ -1,4 +1,10 @@
 ﻿import React, { useState, useEffect } from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'font-awesome/css/font-awesome.min.css';
+import './App.css';
 import Header from './HeaderAndFooter/Header';
 import Footer from './HeaderAndFooter/Footer';
 import Home from './PortfolioJs/Home';
@@ -7,12 +13,7 @@ import Education from './PortfolioJs/Education';
 import Projects from './PortfolioJs/Projects';
 import Contact from './PortfolioJs/Contact';
 import Skills from './PortfolioJs/Skills';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'react-bootstrap';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import 'font-awesome/css/font-awesome.min.css';
-import { SpeedInsights } from '@vercel/speed-insights/react';
-import './App.css';
+import WorkExperience from './PortfolioJs/WorkExperience';
 
 function App() {
   const [showButton, setShowButton] = useState(false);
@@ -69,6 +70,10 @@ function App() {
         <Projects />
       </section>
 
+      <section id="workExperience" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`}>
+        <WorkExperience />
+      </section>
+
       <section id="contact" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`}>
         <Contact />
       </section>
@@ -95,10 +100,6 @@ function App() {
 
       <section id="footer" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`} style={{ background: '#333', color: '#fff', padding: '40px 0' }}>
         <Footer />
-      </section>
-
-      <section>
-        <SpeedInsights/>
       </section>
 
       {showButton && (
@@ -133,6 +134,8 @@ function App() {
           transition: 'width 0.2s ease',
         }}
       ></div>
+      {/* Speed insight check for Vercel */}
+        <SpeedInsights/>
     </div>
   );
 }
