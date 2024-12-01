@@ -59,20 +59,7 @@ function Footer() {
             </div>
             <div className="col-12 col-md-auto">
               <a
-                href="https://www.facebook.com/yourfacebookprofile"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white text-decoration-none"
-              >
-                <i className="fab fa-facebook fa-lg"></i> Facebook
-              </a>
-            </div>
-            <div className="col-12 col-md-auto">
-              <span className="text-white"></span>
-            </div>
-            <div className="col-12 col-md-auto">
-              <a
-                href="https://www.instagram.com/yourinstaprofile"
+                href="https://www.instagram.com/ajinkya.ghodekar/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white text-decoration-none"
@@ -80,8 +67,20 @@ function Footer() {
                 <i className="fab fa-instagram fa-lg"></i> Instagram
               </a>
             </div>
+            <div className="col-12 col-md-auto">
+              <span className="text-white"></span>
+            </div>
+            <div className="col-12 col-md-auto">
+              <a
+                href="https://www.facebook.com/people/Ajinkya-Ghodekar/pfbid0eWcC4UVgqN2mCJnumMhMTwAnCweLdRoGGDjhmhr8jvMkerHdQCxYBq14peKn9bEHl/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white text-decoration-none"
+              >
+                <i className="fab fa-facebook fa-lg"></i> Facebook
+              </a>
+            </div>            
           </div>
-
           {/* Copyright section */}
           <section>
             <p className="mb-2">&copy; 2024 MyReactJsPortfolio. All rights reserved.</p>
