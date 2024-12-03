@@ -83,7 +83,7 @@ function App() {
         <p>Click the button below to download my latest resume.</p>
         <Button
           variant="primary"
-          href="https://drive.google.com/uc?export=download&id=1KaYSBs069Ulv_xNnFyAAygMXsuRztds3"
+          href="https://drive.google.com/uc?export=download&id=1vyn_ps40iEIJOh00W5u91Villbd39Dws"
           target="_blank"
           style={{
             background: '#007bff',

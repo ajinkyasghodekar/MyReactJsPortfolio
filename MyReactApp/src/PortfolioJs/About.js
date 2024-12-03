@@ -9,9 +9,7 @@ function About() {
         <h4 className="text-center mb-4">About Me</h4>
 
         <p className="text-center text-muted">
-          I am a C# .NET Developer with over 3.5 years of experience in C#, .NET, HTML, CSS, Bootstrap, JavaScript, and React JS. 
-          I specialize in building RESTful web applications, implementing security best practices, and applying design patterns 
-          to create scalable solutions. I have strong problem-solving skills and a commitment to writing clean, maintainable code.
+        I am a C# .NET Developer with over 3.5+ years of experience in building scalable, maintainable solutions using C#, .NET, and front-end technologies like React.js, HTML, CSS, and JavaScript. I specialize in developing RESTful web applications, implementing security best practices, and collaborating effectively with cross-functional teams to deliver high-quality software.
         </p>
 
         <div className="text-center mt-4">
