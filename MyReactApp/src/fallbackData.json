@@ -80,12 +80,33 @@
   "workExperience": [
     {
       "id": 1,
-      "jobTitle": "Sr Software Developer",
-      "company": "ABC Tech Solutions",
-      "startDate": "June 2021",
+      "jobTitle": "Senior Software Developer",
+      "company": "Kellton",
+      "startDate": "Jan 2024",
       "endDate": "Present",
-      "description": "Developing RESTful web services and applications using C#, .NET Core, and SQL Server. Collaborating with cross-functional teams to ensure timely delivery of software solutions.",
-      "companyUrl": "https://www.abctech.com"
+      "location": "Hyderabad, Telangana, India",
+      "description": "Working as Senior .NET Developer",
+      "skills": ["C#", ".NET CORE", "ASP.NET MVC", "REST APIs", "MicroSoft SQL Database", "REACT JS", "Microsoft Azure", "Oracle Database", "GitHub", "LINQ", "EF CORE",  "Code Review"]
+    },
+    {
+      "id": 2,
+      "jobTitle": "Software Engineer",
+      "company": "Kellton",
+      "startDate": "Dec 2021",
+      "endDate": "Jan 2024",
+      "location": "Hyderabad, Telangana, India",
+      "description": "Worked as .NET Developer",
+      "skills": ["C#", ".NET CORE", "ASP.NET MVC", "REST APIs", "MicroSoft SQL Database", "GitHub", "LINQ", "EF CORE"]
+    },
+    {
+      "id": 3,
+      "jobTitle": "Software Engineering Trainee",
+      "company": "Kellton",
+      "startDate": "Aug 2021",
+      "endDate": "Dec 2021",
+      "location": "Hyderabad, Telangana, India",
+      "description": "Worked as Trainee Software Engineer for SAG webMethods and MuleSoft Integration Tools.",
+      "skills": ["MuleSoft Anypoint Platform", "MuleSoft connectors", "webMethods Integration", "Json", "XML", "Problem Solving"]
     }
   ]
 } 
