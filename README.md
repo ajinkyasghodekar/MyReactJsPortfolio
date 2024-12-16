@@ -6,7 +6,7 @@ Welcome to my personal portfolio! This project is built using ReactJS and showca
 
 You can check out the live demo of the portfolio here:
 
-[my-react-js-portfolio-nu.vercel.app](https://my-react-js-portfolio-nu.vercel.app)
+[ajinkya-ghodekar-portfolio.vercel.app](https://ajinkya-ghodekar-portfolio.vercel.app/)
 
 ## Features
 
