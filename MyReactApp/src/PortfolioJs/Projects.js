@@ -3,65 +3,65 @@ import axios from 'axios';
 import '../PortfolioStyle/Project.css';
 
 function Project() {
-  const [projects, setProjects] = useState([]);
-  const [errorMessage, setErrorMessage] = useState('');
-  const [loading, setLoading] = useState(true);
+    const [projects, setProjects] = useState([]);
+    const [errorMessage, setErrorMessage] = useState('');
+    const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    axios.get('https://localhost:7083/api/Projects')
-      .then(response => {
-        const { status, data } = response;
+    useEffect(() => {
+        axios.get('https://localhost:7083/api/Projects')
+            .then(response => {
+                const { status, data } = response;
 
-        if (status === 200 && data.isSuccess) {
-          setProjects(data.result || []);
-          setErrorMessage('');
-        } else {
-          setErrorMessage(data.message || 'Failed to load projects. Please try again.');
-        }
-      })
-      .catch(() => {
-        setProjects(require('../fallbackData.json').projects); // Load fallback data
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
+                if (status === 200 && data.isSuccess) {
+                    setProjects(data.result || []);
+                    setErrorMessage('');
+                } else {
+                    setErrorMessage(data.message || 'Failed to load projects. Please try again.');
+                }
+            })
+            .catch(() => {
+                setProjects(require('../fallbackData.json').projects); // Load fallback data
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+    }, []);
 
-  return (
-    <section id="projects" className="container my-5">
-      <h4 className="text-center mb-4">Projects</h4>
+    return (
+        <section id="projects" className="container my-5">
+            <h4 className="text-center mb-4">Projects</h4>
 
-      {loading && <p className="text-center text-secondary">Loading...</p>}
-      {errorMessage && <p className="text-danger text-center">{errorMessage}</p>}
+            {loading && <p className="text-center text-secondary">Loading...</p>}
+            {errorMessage && <p className="text-danger text-center">{errorMessage}</p>}
 
-      <div className="row">
-        {projects.length > 0 ? (
-          projects.map(project => (
-            <div key={project.id} className="col-md-6 col-lg-4 mb-4">
-              <div className="card shadow-lg h-100 project-card">
-                <img
-                  src={`/images/${project.imageUrl}`} 
-                  alt={project.name}
-                  className="card-img-top project-card-img"
-                />
+            <div className="row">
+                {projects.length > 0 ? (
+                    projects.map(project => (
+                        <div key={project.id} className="col-md-6 col-lg-4 mb-4">
+                            <div className="card shadow-lg h-100 project-card">
+                                <img
+                                    src={`/images/${project.imageUrl}`}
+                                    alt={project.name}
+                                    className="card-img-top project-card-img"
+                                />
 
-                <div className="card-body">
-                  <h5 className="card-title">{project.name}</h5>
-                  <p className="card-text"><b>Description:</b> {project.description}</p>
-                  <p className="card-text"><b>Author:</b> <a href={project.authorUrl} target="_blank" rel="noopener noreferrer">{project.author}</a></p>
-                  <a href={project.descriptionUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                    View Project
-                  </a>
-                </div>
-              </div>
+                                <div className="card-body">
+                                    <h5 className="card-title">{project.name}</h5>
+                                    <p className="card-text"><b>Description:</b> {project.description}</p>
+                                    <p className="card-text"><b>Author:</b> <a href={project.authorUrl} target="_blank" rel="noopener noreferrer">{project.author}</a></p>
+                                    <a href={project.descriptionUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                                        View Project
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                ) : (
+                    !loading && <p className="text-center text-warning">No projects found.</p>
+                )}
             </div>
-          ))
-        ) : (
-          !loading && <p className="text-center text-warning">No projects found.</p>
-        )}
-      </div>
-    </section>
-  );
+        </section>
+    );
 }
 
 export default Project;
