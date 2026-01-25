@@ -4,21 +4,38 @@ import '../PortfolioStyle/About.css';
 
 function About() {
     return (
-        <section id="about" className="py-5 bg-light">
-            <div className="container">
-                <h4 className="text-center mb-4">About Me</h4>
+        <section id="about" className="about-section py-5 position-relative">
+            {/* AI Background Glow */}
+            <div className="about-bg"></div>
 
-                <p className="text-center text-muted">
-                    I am a C# .NET Developer with over 4.5+ years of experience in building scalable, maintainable solutions using C#, .NET, and front-end technologies like React.js, HTML, CSS, and JavaScript. I specialize in developing RESTful web applications, implementing security best practices, and collaborating effectively with cross-functional teams to deliver high-quality software.
+            <div className="container position-relative" style={{ zIndex: 2 }}>
+                <h2 className="text-center fw-bold mb-4 gradient-heading">
+                    About Me
+                </h2>
+
+                <p className="text-center mx-auto about-text ai-text">
+                    Hi, I'm <strong>Ajinkya</strong> - a <strong>Full Stack .NET Developer</strong> with
+                    <strong> 4.5+ years</strong> of experience crafting scalable,
+                    secure, and high-performance applications.
+                    <br />
+                    <span className="ai-sub">
+                        I design systems that think ahead, scale effortlessly,
+                        and perform reliably - just like good AI.
+                    </span>
                 </p>
 
-                <div className="text-center mt-4">
-                    <img
-                        src="/images/default.jpg"
-                        alt="Profile"
-                        className="profile-img"
-                    />
+                <div className="d-flex justify-content-center mt-5">
+                    <div className="profile-wrapper">
+                        <img
+                            src="/images/default.jpg"
+                            alt="Ajinkya"
+                            className="profile-img-innovative"
+                        />
+                        <span className="ring ring-1"></span>
+                        <span className="ring ring-2"></span>
+                    </div>
                 </div>
+
             </div>
         </section>
     );
