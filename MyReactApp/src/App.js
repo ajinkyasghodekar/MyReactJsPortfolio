@@ -16,128 +16,128 @@ import Skills from './PortfolioJs/Skills';
 import WorkExperience from './PortfolioJs/WorkExperience';
 
 function App() {
-  const [showButton, setShowButton] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [scrollY, setScrollY] = useState(0);
+    const [showButton, setShowButton] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const [scrollY, setScrollY] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setScrollY(scrollPosition);
-      setShowButton(scrollPosition > 300); 
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY;
+            setScrollY(scrollPosition);
+            setShowButton(scrollPosition > 300);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        setTimeout(() => setLoading(false), 1500);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
     };
 
-    window.addEventListener('scroll', handleScroll);
+    return (
+        <div className="App">
 
-    setTimeout(() => setLoading(false), 1500);
+            <section id="header" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`}>
+                <Header />
+            </section>
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+            <section id="home" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`}>
+                <Home />
+            </section>
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
+            <section id="about" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`}>
+                <About />
+            </section>
 
-  return (
-    <div className="App">
+            <section id="education" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`}>
+                <Education />
+            </section>
 
-      <section id="header" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`}>
-        <Header />
-      </section>
+            <section id="skills" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`}>
+                <Skills />
+            </section>
 
-      <section id="home" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`}>
-        <Home />
-      </section>
+            <section id="projects" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`}>
+                <Projects />
+            </section>
 
-      <section id="about" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`}>
-        <About />
-      </section>
+            <section id="workExperience" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`}>
+                <WorkExperience />
+            </section>
 
-      <section id="education" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`}>
-        <Education />
-      </section>
+            <section id="contact" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`}>
+                <Contact />
+            </section>
 
-      <section id="skills" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`}>
-        <Skills />
-      </section>
+            <section id="download-resume" className="text-center py-5" style={{ background: '#f4f4f4' }}>
+                <h4>Download My Resume</h4>
+                <p>Click the button below to download my latest resume.</p>
+                <Button
+                    variant="primary"
+                    href="https://drive.google.com/uc?export=download&id=1vyn_ps40iEIJOh00W5u91Villbd39Dws"
+                    target="_blank"
+                    style={{
+                        background: '#007bff',
+                        borderColor: '#007bff',
+                        padding: '15px 30px',
+                        fontSize: '18px',
+                        borderRadius: '30px',
+                        boxShadow: '0 5px 15px rgba(0, 123, 255, 0.4)',
+                    }}
+                >
+                    Download Resume
+                </Button>
+            </section>
 
-      <section id="projects" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`}>
-        <Projects />
-      </section>
+            <section id="footer" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`} style={{ background: '#333', color: '#fff', padding: '40px 0' }}>
+                <Footer />
+            </section>
 
-      <section id="workExperience" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`}>
-        <WorkExperience />
-      </section>
+            {showButton && (
+                <button
+                    onClick={scrollToTop}
+                    className="btn btn-primary position-fixed bottom-0 end-0 m-3"
+                    style={{
+                        width: '60px',
+                        height: '60px',
+                        borderRadius: '50%',
+                        fontSize: '24px',
+                        backgroundColor: '#28a745',
+                        border: 'none',
+                        boxShadow: '0 5px 15px rgba(40, 167, 69, 0.3)',
+                        transition: 'all 0.3s ease-in-out',
+                    }}
+                    aria-label="Go to top"
+                >
+                    ↑
+                </button>
+            )}
 
-      <section id="contact" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`}>
-        <Contact />
-      </section>
-
-      <section id="download-resume" className="text-center py-5" style={{ background: '#f4f4f4' }}>
-        <h4>Download My Resume</h4>
-        <p>Click the button below to download my latest resume.</p>
-        <Button
-          variant="primary"
-          href="https://drive.google.com/uc?export=download&id=1vyn_ps40iEIJOh00W5u91Villbd39Dws"
-          target="_blank"
-          style={{
-            background: '#007bff',
-            borderColor: '#007bff',
-            padding: '15px 30px',
-            fontSize: '18px',
-            borderRadius: '30px',
-            boxShadow: '0 5px 15px rgba(0, 123, 255, 0.4)',
-          }}
-        >
-          Download Resume
-        </Button>
-      </section>
-
-      <section id="footer" className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`} style={{ background: '#333', color: '#fff', padding: '40px 0' }}>
-        <Footer />
-      </section>
-
-      {showButton && (
-        <button
-          onClick={scrollToTop}
-          className="btn btn-primary position-fixed bottom-0 end-0 m-3"
-          style={{
-            width: '60px',
-            height: '60px',
-            borderRadius: '50%',
-            fontSize: '24px',
-            backgroundColor: '#28a745',
-            border: 'none',
-            boxShadow: '0 5px 15px rgba(40, 167, 69, 0.3)',
-            transition: 'all 0.3s ease-in-out',
-          }}
-          aria-label="Go to top"
-        >
-          ↑
-        </button>
-      )}
-
-      <div
-        className="progress-bar"
-        style={{
-          position: 'fixed',
-          top: '0',
-          left: '0',
-          height: '5px',
-          width: `${(scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100}%`,
-          backgroundColor: '#28a745',
-          transition: 'width 0.2s ease',
-        }}
-      ></div>
-      {/* Speed insight check for Vercel */}
-        <SpeedInsights/>
-    </div>
-  );
+            <div
+                className="progress-bar"
+                style={{
+                    position: 'fixed',
+                    top: '0',
+                    left: '0',
+                    height: '5px',
+                    width: `${(scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100}%`,
+                    backgroundColor: '#28a745',
+                    transition: 'width 0.2s ease',
+                }}
+            ></div>
+            {/* Speed insight check for Vercel */}
+            <SpeedInsights />
+        </div>
+    );
 }
 
 export default App;
