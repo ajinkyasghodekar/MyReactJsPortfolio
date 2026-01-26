@@ -1,6 +1,7 @@
-.about-section {
-    background: #f8f9fa;
-    overflow: hidden;
+#about-section {
+    position: relative;
+    padding: 20px;
+    background: #f0f4f8;
 }
 
 /* AI NEURAL FLOW BACKGROUND */
@@ -29,11 +30,33 @@
     -webkit-text-fill-color: transparent;
 }
 
-/* Text */
-.about-text {
-    max-width: 750px;
-    font-size: 1.05rem;
+#about {
+    position: relative;
+    padding: 60px 20px;
+    background: #f0f4f8;
 }
+
+    /* Section Heading */
+    #about h4 {
+        font-weight: 700;
+        font-size: 2rem;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 10px;
+        margin-bottom: 50px;
+        color: #333;
+    }
+
+        #about h4::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, #4CAF50, #81C784);
+            left: 20%;
+            bottom: 0;
+            border-radius: 5px;
+        }
 
 .ai-text {
     font-size: 1.08rem;

@@ -38,16 +38,6 @@ function Home() {
                     C# .NET Developer • Full‑Stack Engineer • Problem Solver
                 </motion.h4>
 
-                <motion.p
-                    className="lead mx-auto hero-desc"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1, duration: 0.8 }}
-                >
-                    I build scalable, secure, and high‑performance applications with
-                    modern .NET and web technologies.
-                </motion.p>
-
                 <motion.div
                     className="mt-4 d-flex justify-content-center gap-3 flex-wrap"
                     initial={{ scale: 0.9, opacity: 0 }}
