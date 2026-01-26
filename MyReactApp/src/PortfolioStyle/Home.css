@@ -129,7 +129,7 @@
 
 /* Gradient + Glow Text */
 .gradient-text {
-    background: linear-gradient(90deg, #00dbde, #fc00ff);
+    background: repeating-linear-gradient(90deg, #ff5705, #260657);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
