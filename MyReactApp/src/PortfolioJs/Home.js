@@ -35,8 +35,7 @@ function Home() {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.6 }}
                 >
-                    .NET Developer • Full‑Stack Engineer • Problem Solver
-                    while( ! (succeed = try( ) ) );
+                    C# .NET Developer • Full‑Stack Engineer • Problem Solver
                 </motion.h4>
 
                 <motion.p
