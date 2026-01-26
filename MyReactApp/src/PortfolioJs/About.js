@@ -14,16 +14,16 @@ function About() {
                 </h2>
 
                 <p className="text-center mx-auto about-text ai-text">
-                    Hi, I'm <strong>Ajinkya</strong> - a <strong>Full Stack .NET Developer</strong> with
+                    Hello, I'm <strong>Ajinkya</strong> - a <strong>Full Stack .NET Developer</strong> with
                     <strong> 4.5+ years</strong> of experience crafting scalable,
                     secure, and high-performance applications.
                     <br />
-                    <span className="ai-sub">
-                        I design systems that think ahead, scale effortlessly,
-                        and perform reliably - just like good AI.
-                    </span>
                 </p>
 
+                <span className="ai-sub">
+                    I design systems that think ahead, scale effortlessly,
+                    and perform reliably - just like good AI.
+                </span>
                 <div className="d-flex justify-content-center mt-5">
                     <div className="profile-wrapper">
                         <img
