@@ -4,7 +4,7 @@ import '../PortfolioStyle/About.css';
 
 function About() {
     return (
-        <section id="about" className="about-section py-5 position-relative">
+        <section id="about" className="container position-relative">
             {/* AI Background Glow */}
             <div className="about-bg"></div>
 
