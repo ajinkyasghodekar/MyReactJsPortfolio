@@ -36,6 +36,7 @@ function Home() {
                     transition={{ delay: 0.6 }}
                 >
                     .NET Developer • Full‑Stack Engineer • Problem Solver
+                    while( ! (succeed = try( ) ) );
                 </motion.h4>
 
                 <motion.p
