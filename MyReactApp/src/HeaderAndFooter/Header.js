@@ -51,25 +51,40 @@ function Header() {
 
             {/* Styles */}
             <style>{`
-                /* GLASS NAV (same sticky behavior) */
+                /* GLASS NAV (sticky, modern & attractive) */
                 .glass-nav-neo {
-                    backdrop-filter: blur(12px);
-                    border-bottom: 1px solid rgba(255,255,255,0.08);
-                    box-shadow: 0 6px 25px rgba(0,0,0,0.35);
+                    background: rgba(255, 255, 255, 0.05); /* very subtle frosted glass */
+                    backdrop-filter: blur(20px) saturate(200%); /* blur + vibrant look */
+                    -webkit-backdrop-filter: blur(20px) saturate(200%);
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+                    background-clip: padding-box;
+                    transition: all 0.4s ease;
+                }
+
+                /* Glass nav hover / scrolled effect */
+                .glass-nav-neo.scrolled {
+                    background: rgba(255, 255, 255, 0.15);
+                    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+                    border-bottom-color: rgba(255, 255, 255, 0.25);
                 }
 
                 /* BRAND */
                 .brand-neo {
-                    letter-spacing: 1px;
-                    font-size: 1.4rem;
+                    letter-spacing: 1.5px;
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    color: #ffffff;
+                    transition: all 0.3s ease;
                 }
 
                 .brand-neo span {
                     color: #0d6efd;
+                    text-shadow: 0 0 10px rgba(13,110,253,0.7);
                 }
 
                 .brand-neo:hover {
-                    text-shadow: 0 0 12px rgba(13,110,253,0.8);
+                    text-shadow: 0 0 20px rgba(13,110,253,0.9), 0 0 30px rgba(94,163,255,0.6);
                 }
 
                 /* NAV LINKS */
@@ -78,29 +93,30 @@ function Header() {
                     font-weight: 600;
                     text-transform: uppercase;
                     padding-bottom: 6px;
-                    transition: color 0.3s ease;
+                    color: #ffffff;
+                    transition: color 0.3s ease, text-shadow 0.3s ease;
                 }
 
                 .nav-neo .nav-link:hover {
                     color: #0d6efd !important;
-                    text-shadow: 0 0 10px rgba(13,110,253,0.6);
+                    text-shadow: 0 0 12px rgba(13,110,253,0.7), 0 0 20px rgba(94,163,255,0.5);
                 }
 
-                /* ANIMATED UNDERLINE (replaces dot, same space) */
+                /* ANIMATED UNDERLINE */
                 .nav-neo .underline {
                     position: absolute;
                     left: 50%;
-                    bottom: -2px;
+                    bottom: -3px;
                     width: 0;
                     height: 2px;
-                    background: linear-gradient(90deg, #0d6efd, #5ea3ff);
-                    transition: all 0.3s ease;
+                    background: linear-gradient(90deg, #0d6efd, #5ea3ff, #0dcaf0);
+                    transition: all 0.4s ease;
                     transform: translateX(-50%);
                     border-radius: 4px;
                 }
 
                 .nav-neo .nav-link:hover .underline {
-                    width: 70%;
+                    width: 80%;
                 }
 
                 /* MOBILE SAFE */
