@@ -9,12 +9,14 @@ function About() {
             <div className="about-bg"></div>
 
             <div className="container position-relative" style={{ zIndex: 2 }}>
-                <h2 className="text-center fw-bold mb-4 gradient-heading">
-                    About Me
-                </h2>
+                {/*<h2 className="text-center fw-bold mb-4 gradient-heading">*/}
+                {/*    About Me*/}
+                {/*</h2>*/}
+
+                <h4 className="text-center">About Me</h4>
 
                 <p className="text-center mx-auto about-text ai-text">
-                    Hello, I'm <strong>Ajinkya</strong> - a <strong>Full Stack .NET Developer</strong> with
+                    Hi, I'm <strong>Ajinkya</strong> - a <strong>Full Stack .NET Developer</strong> with
                     <strong> 4.5+ years</strong> of experience crafting scalable,
                     secure, and high-performance applications.
                     <br />
@@ -24,6 +26,7 @@ function About() {
                     I design systems that think ahead, scale effortlessly,
                     and perform reliably - just like good AI.
                 </span>
+
                 <div className="d-flex justify-content-center mt-5">
                     <div className="profile-wrapper">
                         <img

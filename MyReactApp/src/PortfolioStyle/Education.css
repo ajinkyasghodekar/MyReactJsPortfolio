@@ -1,8 +1,128 @@
-.hover-shadow:hover {
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+/* Section Styling */
+#education {
+    position: relative;
+    padding: 20px;
+    background: #f0f4f8;
+}
+/* AI NEURAL FLOW BACKGROUND */
+.education-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(99,102,241,0.15), transparent 50%), radial-gradient(circle at 80% 80%, rgba(56,189,248,0.15), transparent 50%);
+    animation: aiFlow 12s ease-in-out infinite alternate;
+    z-index: 0;
 }
 
-.card:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
+/* Section Heading */
+#education h4 {
+    font-weight: 700;
+    font-size: 2rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+    #education h4::after {
+        content: '';
+        position: absolute;
+        width: 60%;
+        height: 4px;
+        background: linear-gradient(90deg, #4CAF50, #81C784);
+        left: 20%;
+        bottom: 0;
+        border-radius: 5px;
+    }
+
+/* Timeline Container */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 40px;
+}
+
+    /* Vertical Line */
+    .timeline::after {
+        content: '';
+        position: absolute;
+        left: 30px;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(180deg, #4CAF50, #81C784);
+        border-radius: 2px;
+    }
+
+/* Timeline Item */
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+    /* Hover Effect */
+    .timeline-item:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0px 15px 30px rgba(0,0,0,0.2);
+    }
+
+    /* Timeline Dot */
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: 22px;
+        top: 20px;
+        width: 16px;
+        height: 16px;
+        background: #4CAF50;
+        border-radius: 50%;
+        border: 3px solid white;
+        z-index: 1;
+    }
+
+    /* Title & Text */
+    .timeline-item h5 {
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 8px;
+        font-size: 1.2rem;
+    }
+
+    .timeline-item p {
+        margin: 4px 0;
+        color: #555;
+        font-size: 0.95rem;
+    }
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 20px;
+    }
+
+    .timeline-item {
+        padding-left: 50px;
+    }
 }
