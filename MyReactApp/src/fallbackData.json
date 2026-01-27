@@ -8,7 +8,7 @@
       "liveLinkUrl": "https://ajinkya-ghodekar-portfolio.vercel.app/",
       "authorUrl": "https://www.linkedin.com/in/ajinkya-ghodekar",
       "codeUrl": "https://github.com/ajinkyasghodekar/MyReactJsPortfolio",
-      "imageUrl": "default.jpg"
+      "imageUrl": "portfolioImage.jpg"
     },
     {
       "id": 2,
@@ -18,7 +18,7 @@
       "liveLinkUrl": "",
       "authorUrl": "https://www.linkedin.com/in/ajinkya-ghodekar",
       "codeUrl": "https://github.com/ajinkyasghodekar/Bulky_MVC",
-      "imageUrl": "default.jpg"
+      "imageUrl": "aspMvc.png"
     },
     {
       "id": 3,
@@ -28,7 +28,7 @@
       "liveLinkUrl": "",
       "authorUrl": "https://www.linkedin.com/in/ajinkya-ghodekar",
       "codeUrl": "https://github.com/ajinkyasghodekar/MyMagicVilla_API",
-      "imageUrl": "default.jpg"
+      "imageUrl": "dotNetCoreApi.jpg"
     },
     {
       "id": 4,
@@ -38,7 +38,7 @@
       "liveLinkUrl": "",
       "authorUrl": "https://www.linkedin.com/in/ajinkya-ghodekar",
       "codeUrl": "https://github.com/ajinkyasghodekar/AuthServiceWebApp",
-      "imageUrl": "default.jpg"
+      "imageUrl": "authImage.jpg"
     }
   ],
   "skills": [
