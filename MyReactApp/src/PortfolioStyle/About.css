@@ -2,6 +2,7 @@
     position: relative;
     padding: 20px;
     background: #f0f4f8;
+    overflow: hidden;
 }
 
 /* AI NEURAL FLOW BACKGROUND */

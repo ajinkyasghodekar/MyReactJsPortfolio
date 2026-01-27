@@ -1,64 +1,81 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../PortfolioStyle/Project.css';
 
 function Project() {
     const [projects, setProjects] = useState([]);
-    const [errorMessage, setErrorMessage] = useState('');
-    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         axios.get('https://localhost:7083/api/Projects')
-            .then(response => {
-                const { status, data } = response;
-
-                if (status === 200 && data.isSuccess) {
-                    setProjects(data.result || []);
-                    setErrorMessage('');
-                } else {
-                    setErrorMessage(data.message || 'Failed to load projects. Please try again.');
+            .then(res => {
+                if (res.status === 200 && res.data.isSuccess) {
+                    setProjects(res.data.result || []);
                 }
             })
             .catch(() => {
-                setProjects(require('../fallbackData.json').projects); // Load fallback data
-            })
-            .finally(() => {
-                setLoading(false);
+                setProjects(require('../fallbackData.json').projects);
             });
     }, []);
 
     return (
-        <section id="projects" className="container my-5">
-            <h4 className="text-center mb-4">Projects</h4>
+        <section id="projects" className="container position-relative">
+            <div className="projects-bg"></div>
 
-            {loading && <p className="text-center text-secondary">Loading...</p>}
-            {errorMessage && <p className="text-danger text-center">{errorMessage}</p>}
+            <h4 className="text-center">
+                Projects
+            </h4>
 
-            <div className="row">
-                {projects.length > 0 ? (
-                    projects.map(project => (
-                        <div key={project.id} className="col-md-6 col-lg-4 mb-4">
-                            <div className="card shadow-lg h-100 project-card">
-                                <img
-                                    src={`/images/${project.imageUrl}`}
-                                    alt={project.name}
-                                    className="card-img-top project-card-img"
-                                />
 
-                                <div className="card-body">
-                                    <h5 className="card-title">{project.name}</h5>
-                                    <p className="card-text"><b>Description:</b> {project.description}</p>
-                                    <p className="card-text"><b>Author:</b> <a href={project.authorUrl} target="_blank" rel="noopener noreferrer">{project.author}</a></p>
-                                    <a href={project.descriptionUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-                                        View Project
+            <div className="projects-grid">
+                {projects.map(project => (
+                    <div key={project.id} className="project-saas-card">
+                        <img
+                            src={`/images/${project.imageUrl}`}
+                            alt={project.name}
+                            className="project-saas-img"
+                        />
+
+                        <div className="project-saas-body">
+                            <h5 className="project-saas-title">
+                                {project.name}
+                            </h5>
+
+                            <p className="project-saas-desc">
+                                {project.description}
+                            </p>
+
+                            <div className="project-saas-tech">
+                                {project.techStack?.map((tech, i) => (
+                                    <span key={i}>{tech}</span>
+                                ))}
+                            </div>
+
+                            <div className="project-saas-actions">
+                                {project.codeUrl && (
+                                    <a
+                                        href={project.codeUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="project-btn btn-code"
+                                    >
+                                        Code
                                     </a>
-                                </div>
+                                )}
+
+                                {project.liveLinkUrl && (
+                                    <a
+                                        href={project.liveLinkUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="project-btn btn-live"
+                                    >
+                                        Live Link
+                                    </a>
+                                )}
                             </div>
                         </div>
-                    ))
-                ) : (
-                    !loading && <p className="text-center text-warning">No projects found.</p>
-                )}
+                    </div>
+                ))}
             </div>
         </section>
     );

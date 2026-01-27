@@ -3,44 +3,43 @@
     {
       "id": 1,
       "name": "MyReactJsPortfolio",
-      "description": "A portfolio website built with React.js to showcase various projects and skills.",
+      "description": "A modern, responsive portfolio website built with React.js to showcase personal projects, technical skills, and professional achievements. Includes interactive UI elements and smooth navigation for an engaging user experience.",
       "author": "Ajinkya Ghodekar",
-      "url": "https://my-react-js-portfolio-nu.vercel.app/",
+      "liveLinkUrl": "https://ajinkya-ghodekar-portfolio.vercel.app/",
       "authorUrl": "https://www.linkedin.com/in/ajinkya-ghodekar",
-      "descriptionUrl": "https://my-react-js-portfolio-nu.vercel.app/",
+      "codeUrl": "https://github.com/ajinkyasghodekar/MyReactJsPortfolio",
       "imageUrl": "default.jpg"
     },
     {
       "id": 2,
       "name": "Bulky_MVC",
-      "description": "An e-commerce application built with ASP.NET MVC for managing products, orders, and customer information.",
+      "description": "A full-featured e-commerce application built with ASP.NET MVC to efficiently manage products, orders, and customer information. Implements CRUD operations, user-friendly admin dashboard, and structured database management for seamless business operations.",
       "author": "Ajinkya Ghodekar",
-      "url": "https://github.com/ajinkyasghodekar/Bulky_MVC",
+      "liveLinkUrl": "",
       "authorUrl": "https://www.linkedin.com/in/ajinkya-ghodekar",
-      "descriptionUrl": "https://github.com/ajinkyasghodekar/Bulky_MVC",
+      "codeUrl": "https://github.com/ajinkyasghodekar/Bulky_MVC",
       "imageUrl": "default.jpg"
     },
     {
       "id": 3,
       "name": "MyMagicVilla_API",
-      "description": "A .NET Core API for managing a hotel booking system, providing services for room booking, payment, and user management.",
+      "description": "A robust .NET Core API for managing hotel booking systems. Provides endpoints for room booking, payment processing, user authentication, and administrative tasks, ensuring secure and efficient management of hotel operations.",
       "author": "Ajinkya Ghodekar",
-      "url": "https://github.com/ajinkyasghodekar/MyMagicVilla_API",
+      "liveLinkUrl": "",
       "authorUrl": "https://www.linkedin.com/in/ajinkya-ghodekar",
-      "descriptionUrl": "https://github.com/ajinkyasghodekar/MyMagicVilla_API",
+      "codeUrl": "https://github.com/ajinkyasghodekar/MyMagicVilla_API",
       "imageUrl": "default.jpg"
     },
     {
       "id": 4,
       "name": "Authentication Service",
-      "description": "An ASP.NET MVC application for user authentication, including features like login, password validation, and user input validation.",
+      "description": "An ASP.NET MVC application providing secure user authentication and authorization. Features include login, password validation, input sanitization, and error handling to ensure a reliable and secure user login system.",
       "author": "Ajinkya Ghodekar",
-      "url": "https://github.com/ajinkyasghodekar/AuthServiceWebApp",
+      "liveLinkUrl": "",
       "authorUrl": "https://www.linkedin.com/in/ajinkya-ghodekar",
-      "descriptionUrl": "https://github.com/ajinkyasghodekar/AuthServiceWebApp",
+      "codeUrl": "https://github.com/ajinkyasghodekar/AuthServiceWebApp",
       "imageUrl": "default.jpg"
     }
-
   ],
   "skills": [
     {
