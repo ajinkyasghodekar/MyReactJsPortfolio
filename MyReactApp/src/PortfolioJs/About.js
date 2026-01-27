@@ -1,4 +1,5 @@
 import React from 'react';
+import AjinkyaImageBase64 from '../PortfolioJs/AjinkyaImageBase64'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../PortfolioStyle/About.css';
 
@@ -30,9 +31,12 @@ function About() {
                 <div className="d-flex justify-content-center mt-5">
                     <div className="profile-wrapper">
                         <img
-                            src="/images/default.jpg"
+                            src={AjinkyaImageBase64}
                             alt="Ajinkya"
                             className="profile-img-innovative"
+                            draggable="false"
+                            onContextMenu={(e) => e.preventDefault()}
+                            onDragStart={(e) => e.preventDefault()}
                         />
                         <span className="ring ring-1"></span>
                         <span className="ring ring-2"></span>
