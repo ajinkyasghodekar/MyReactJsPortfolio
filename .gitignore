@@ -362,4 +362,3 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 *.env
-/MyReactApp/src/PortfolioJs/AjinkyaImageBase64.js
