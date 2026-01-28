@@ -166,8 +166,16 @@
       "startDate": "Aug 2021",
       "endDate": "Dec 2021",
       "location": "Hyderabad, Telangana, India",
-      "description": "Worked as Trainee Software Engineer for SAG webMethods and MuleSoft Integration Tools.",
-      "skills": [ "MuleSoft Anypoint Platform", "MuleSoft connectors", "webMethods Integration", "Json", "XML", "Problem Solving" ]
+      "description": "Worked as a .NET Trainee, gaining hands-on experience in backend development, application integration, and enterprise-level software solutions.",
+      "skills": [
+        "C#",
+        ".NET Core",
+        "ASP.NET MVC",
+        "REST APIs",
+        "SQL Basics",
+        "Problem Solving"
+      ]
     }
+
   ]
 }
