@@ -1,68 +1,166 @@
 .App {
     text-align: center;
     padding: 1rem;
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, #f8f9fa, #eef2f7);
+    min-height: 100vh;
+    scroll-behavior: smooth;
 }
-    .App > h3 {
-        background-color: #f4f4f4;
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
     }
 
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 .go-to-top {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff; 
-    color: white;
-    border: none;
-    padding: 10px 15px;
+    bottom: 24px;
+    right: 24px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
+    background: linear-gradient(135deg, #28a745, #1e7e34);
+    color: #fff;
+    border: none;
+    font-size: 22px;
     cursor: pointer;
-    font-size: 24px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    transition: opacity 0.3s ease-in-out;
+    box-shadow: 0 10px 25px rgba(40, 167, 69, 0.35);
+    transition: all 0.3s ease-in-out;
 }
 
     .go-to-top:hover {
-        background-color: #0056b3;
+        transform: translateY(-4px) scale(1.1);
+        box-shadow: 0 15px 30px rgba(40, 167, 69, 0.5);
     }
 
-.go-to-top {
-    display: none;
+button {
+    transition: all 0.3s ease-in-out;
 }
 
-.go-to-top {
-    display: block;
-}
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 1s ease-out forwards;
-  }
-  
-  .fade-out {
-    opacity: 0;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
+    button:hover {
+        transform: translateY(-2px);
     }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  button {
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  button:hover {
-    transform: scale(1.1);
-  }
-  
-  .progress-bar {
+
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #28a745, #20c997);
+    z-index: 9999;
     transition: width 0.2s ease-in-out;
-    background-color: #28a745;
-  }
-  
+}
+
+/*section {
+    padding: 60px 0;
+}*/
+
+.glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+}
+
+footer {
+    background: #111;
+    color: #aaa;
+}
+
+    footer a {
+        color: #fff;
+        transition: color 0.3s ease;
+    }
+
+        footer a:hover {
+            color: #28a745;
+            text-decoration: none;
+        }
+
+/* ===========================
+   DOWNLOAD RESUME SECTION
+=========================== */
+#download-resume {
+    position: relative;
+    padding: 20px;
+    background: #f0f4f8;
+    overflow: hidden;
+}
+
+/* Soft Glow Background */
+.download-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(99,102,241,0.15), transparent 50%), radial-gradient(circle at 80% 80%, rgba(56,189,248,0.15), transparent 50%);
+    margin-bottom: -100px;
+}
+
+/* Content above background */
+#download-content {
+    position: relative;
+    background: radial-gradient(circle at 20% 20%, rgba(99,102,241,0.15), transparent 50%), radial-gradient(circle at 80% 80%, rgba(56,189,248,0.15), transparent 50%);
+    z-index: 1;
+}
+
+/* Heading */
+#download-resume h4 {
+    font-weight: 700;
+    font-size: 2rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+    #download-resume h4::after {
+        content: '';
+        position: absolute;
+        width: 60%;
+        height: 4px;
+        background: linear-gradient(90deg, #6366f1, #22c55e);
+        left: 20%;
+        bottom: 0;
+        border-radius: 5px;
+    }
+
+/* Description */
+#download-resume p {
+    color: #555;
+    margin-bottom: 30px;
+    font-size: 1.05rem;
+}
+
+/* Resume Button */
+.download-btn {
+    background: linear-gradient(135deg, #6366f1, #22c55e);
+    border: none;
+    border-radius: 999px;
+    padding: 10px 30px;
+    font-weight: 600;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    /* Button Hover */
+    .download-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(99,102,241,0.45);
+    }
