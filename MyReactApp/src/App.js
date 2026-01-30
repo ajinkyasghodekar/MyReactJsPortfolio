@@ -89,19 +89,21 @@ function App() {
                     <p>Click the button below to download my latest resume.</p>
 
                     <Button
-                        className="download-btn"
-                        href="https://drive.google.com/uc?export=download&id=1vyn_ps40iEIJOh00W5u91Villbd39Dws"
+                        as="a"
+                        href="https://drive.google.com/uc?export=download&id=1EEGgpuAYsdsae42pfUUO4UdnF449uuFy"
                         target="_blank"
+                        rel="noopener noreferrer"
+                        className="download-btn"
                     >
                         Download Resume
                     </Button>
+
                 </div>
             </section>
 
             <section
                 id="footer"
-                className={loading ? 'fade-out' : 'fade-in'}
-                style={{ background: '#333', color: '#fff', padding: '40px 0' }}
+                className={`fade-in ${loading ? 'fade-out' : 'fade-in'}`}
             >
                 <Footer />
             </section>

@@ -5,9 +5,7 @@
     overflow: hidden;
 }
 
-/* AI NEURAL FLOW BACKGROUND */
 .about-bg {
-    margin-bottom: -100px;
     position: absolute;
     inset: 0;
     background: radial-gradient(circle at 20% 20%, rgba(99,102,241,0.15), transparent 50%), radial-gradient(circle at 80% 80%, rgba(56,189,248,0.15), transparent 50%);
@@ -61,7 +59,7 @@
         }
 
     #about p {
-        margin-top: 30px;
+/*        margin-top: 30px;*/
     }
 
 .ai-text {

@@ -146,8 +146,21 @@
       "startDate": "Jan 2024",
       "endDate": "Present",
       "location": "Hyderabad, Telangana, India",
-      "description": "Working as Senior .NET Developer",
-      "skills": [ "C#", ".NET CORE", "ASP.NET MVC", "REST APIs", "MicroSoft SQL Database", "REACT JS", "Microsoft Azure", "Oracle Database", "GitHub", "LINQ", "EF CORE", "Code Review" ]
+      "description": "Leading backend development for enterprise HRMS applications, designing scalable APIs, reviewing code, and mentoring junior developers while ensuring performance, security, and best coding practices.",
+      "skills": [
+        "C#",
+        ".NET CORE",
+        "ASP.NET MVC",
+        "REST APIs",
+        "MicroSoft SQL Database",
+        "REACT JS",
+        "Microsoft Azure",
+        "Oracle Database",
+        "GitHub",
+        "LINQ",
+        "EF CORE",
+        "Code Review"
+      ]
     },
     {
       "id": 2,
@@ -156,8 +169,17 @@
       "startDate": "Dec 2021",
       "endDate": "Jan 2024",
       "location": "Hyderabad, Telangana, India",
-      "description": "Worked as .NET Developer",
-      "skills": [ "C#", ".NET CORE", "ASP.NET MVC", "REST APIs", "MicroSoft SQL Database", "GitHub", "LINQ", "EF CORE" ]
+      "description": "Developed and maintained backend modules using .NET technologies, implemented RESTful APIs, optimized database queries, and collaborated closely with frontend and QA teams to deliver reliable business solutions.",
+      "skills": [
+        "C#",
+        ".NET CORE",
+        "ASP.NET MVC",
+        "REST APIs",
+        "MicroSoft SQL Database",
+        "GitHub",
+        "LINQ",
+        "EF CORE"
+      ]
     },
     {
       "id": 3,
@@ -176,6 +198,5 @@
         "Problem Solving"
       ]
     }
-
   ]
 }
