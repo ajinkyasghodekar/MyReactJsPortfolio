@@ -21,19 +21,20 @@ function Contact() {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        axios.post('https://localhost:7083/api/ContactMe', formData)
-            .then(res => {
-                if (res.status === 200 && res.data.isSuccess) {
-                    setSuccessMessage('Message sent successfully!');
-                    setFormData({ name: '', email: '', subject: '', message: '' });
-                    setErrorMessage('');
-                }
-            })
-            .catch(() => {
-                emailjs.send(
+        try {
+            const res = await axios.post('https://localhost:7083/api/ContactMe', formData);
+
+            if (res.status === 200 && res.data.isSuccess) {
+                setSuccessMessage('Message sent successfully!');
+                setFormData({ name: '', email: '', subject: '', message: '' });
+                setErrorMessage('');
+            }
+        } catch (err) {
+            try {
+                await emailjs.send(
                     'service_s2jj46l',
                     'template_7y2f2ue',
                     {
@@ -43,16 +44,16 @@ function Contact() {
                         message: formData.message,
                     },
                     'SZsaYd_j4rJOU9mFL'
-                )
-                    .then(() => {
-                        setSuccessMessage('Message sent successfully!');
-                        setFormData({ name: '', email: '', subject: '', message: '' });
-                        setErrorMessage('');
-                    })
-                    .catch(() => {
-                        setErrorMessage('Something went wrong. Please try again later.');
-                    });
-            });
+                );
+                setSuccessMessage('Message sent successfully!');
+                setFormData({ name: '', email: '', subject: '', message: '' });
+                setErrorMessage('');
+            } catch (error) {
+                console.error('EmailJS error:', error);
+                console.error('EmailJS error:', error.message);
+                setErrorMessage('Something went wrong. Please try other contact option.');
+            }
+        }
     };
 
     return (
@@ -114,7 +115,7 @@ function Contact() {
                         </div>
                     </div>
 
-                    <h5 className="text-center my-4">Or drop a message</h5>
+                    <h5 className="text-center my-4">Have a question or want to work together?</h5>
 
                     {successMessage && (
                         <div className="alert alert-success text-center">{successMessage}</div>
