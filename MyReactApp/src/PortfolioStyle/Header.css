@@ -1,74 +1,184 @@
-/* GLASS NAV (sticky, modern & attractive) */
+
+/* ==============================
+   GLASS NAVIGATION
+============================== */
+
 .glass-nav-neo {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px) saturate(200%);
-    -webkit-backdrop-filter: blur(20px) saturate(200%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
-    background-clip: padding-box;
-    transition: all 0.4s ease;
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    background: rgba(12, 17, 30, 0.88);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+    transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-    /* Glass nav hover / scrolled effect */
     .glass-nav-neo.scrolled {
-        background: rgba(255, 255, 255, 0.15);
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-        border-bottom-color: rgba(255, 255, 255, 0.25);
+        background: rgba(8, 13, 25, 0.96);
+        border-bottom-color: rgba(94, 163, 255, 0.24);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.30);
     }
 
-/* BRAND */
+/* ==============================
+   PERSONAL BRAND
+============================== */
+
 .brand-neo {
-    letter-spacing: 1.5px;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #ffffff;
-    transition: all 0.3s ease;
+    color: #ffffff !important;
+    font-size: 1.45rem;
+    font-weight: 750;
+    letter-spacing: 0.6px;
+    transition: text-shadow 0.25s ease;
 }
 
     .brand-neo span {
-        color: #0d6efd;
-        text-shadow: 0 0 10px rgba(13,110,253,0.7);
+        color: #5ea3ff;
+        text-shadow: 0 0 12px rgba(13, 110, 253, 0.35);
     }
 
     .brand-neo:hover {
-        text-shadow: 0 0 20px rgba(13,110,253,0.9), 0 0 30px rgba(94,163,255,0.6);
+        text-shadow: 0 0 18px rgba(94, 163, 255, 0.35);
     }
 
-/* NAV LINKS */
+/* ==============================
+   NAVIGATION LINKS
+============================== */
+
 .nav-neo .nav-link {
     position: relative;
+    display: inline-block;
+    padding: 0.65rem 0.15rem;
+    color: #d4dbea;
+    font-size: 0.82rem;
     font-weight: 600;
+    letter-spacing: 0.45px;
     text-transform: uppercase;
-    padding-bottom: 6px;
-    color: #ffffff;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+    transition: color 0.25s ease;
 }
 
-    .nav-neo .nav-link:hover {
-        color: #0d6efd !important;
-        text-shadow: 0 0 12px rgba(13,110,253,0.7), 0 0 20px rgba(94,163,255,0.5);
+    .nav-neo .nav-link:hover,
+    .nav-neo .nav-link.active {
+        color: #78b4ff !important;
     }
 
-/* ANIMATED UNDERLINE */
+/* Animated underline */
+
 .nav-neo .underline {
     position: absolute;
     left: 50%;
-    bottom: -3px;
+    bottom: 3px;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #0d6efd, #5ea3ff, #0dcaf0);
-    transition: all 0.4s ease;
-    transform: translateX(-50%);
     border-radius: 4px;
+    background: linear-gradient( 90deg, #0d6efd, #5ea3ff, #0dcaf0 );
+    transform: translateX(-50%);
+    transition: width 0.25s ease;
 }
 
-.nav-neo .nav-link:hover .underline {
-    width: 80%;
+.nav-neo .nav-link:hover .underline,
+.nav-neo .nav-link.active .underline {
+    width: 85%;
 }
 
-/* MOBILE SAFE */
-@media (max-width: 991px) {
+/* ==============================
+   RESUME DOWNLOAD BUTTON
+============================== */
+
+.nav-neo .resume-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-left: 0.25rem;
+    padding: 0.58rem 1rem;
+    border: 1px solid rgba(129, 140, 248, 0.45);
+    border-radius: 9px;
+    color: #c7d2fe;
+    background: rgba(99, 102, 241, 0.10);
+    font-size: 0.80rem;
+    font-weight: 650;
+    letter-spacing: 0.25px;
+    text-transform: none;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+    .nav-neo .resume-btn svg {
+        flex-shrink: 0;
+        font-size: 0.9rem;
+    }
+
+    .nav-neo .resume-btn:hover {
+        color: #ffffff !important;
+        background: rgba(99, 102, 241, 0.22);
+        border-color: #818cf8;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 16px rgba(99, 102, 241, 0.16);
+    }
+
+    /* No animated underline on Resume */
+
+    .nav-neo .resume-btn .underline {
+        display: none;
+    }
+
+/* ==============================
+   KEYBOARD ACCESSIBILITY
+============================== */
+
+.glass-nav-neo a:focus-visible,
+.glass-nav-neo button:focus-visible {
+    outline: 2px solid #78b4ff;
+    outline-offset: 4px;
+}
+
+/* ==============================
+   MOBILE NAVIGATION
+============================== */
+
+@media (max-width: 991.98px) {
+    .glass-nav-neo .navbar-collapse {
+        padding: 0.75rem 0 1rem;
+    }
+
+    .nav-neo .nav-link {
+        display: block;
+        width: 100%;
+        padding: 0.7rem 0.25rem;
+    }
+
     .nav-neo .underline {
         display: none;
+    }
+
+    .nav-neo .nav-link.active:not(.resume-btn) {
+        padding-left: 0.7rem;
+        border-left: 3px solid #5ea3ff;
+        background: rgba(94, 163, 255, 0.08);
+    }
+
+    .nav-neo .resume-btn {
+        display: inline-flex;
+        width: fit-content;
+        margin-top: 0.75rem;
+        margin-left: 0;
+        padding: 0.7rem 1rem;
+    }
+}
+
+/* ==============================
+   REDUCED MOTION
+============================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .glass-nav-neo,
+    .brand-neo,
+    .nav-neo .nav-link,
+    .nav-neo .underline,
+    .nav-neo .resume-btn {
+        transition: none;
     }
 }

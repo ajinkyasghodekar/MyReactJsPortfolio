@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "MyReactJsPortfolio",
-      "description": "A modern, responsive portfolio website built with React.js.",
+      "description": "A modern, responsive developer portfolio built with React.js, featuring project showcases, professional experience, technical skills, and contact integration.",
       "author": "Ajinkya Ghodekar",
       "liveLinkUrl": "https://ajinkya-ghodekar-portfolio.vercel.app/",
       "authorUrl": "https://www.linkedin.com/in/ajinkya-ghodekar",
@@ -13,7 +13,7 @@
     {
       "id": 2,
       "name": "Bulky_MVC",
-      "description": "A full-featured e-commerce application built with ASP.NET MVC.",
+      "description": "An ASP.NET MVC e-commerce application demonstrating product catalog management, shopping workflows, and server-side application development.",
       "author": "Ajinkya Ghodekar",
       "liveLinkUrl": "",
       "authorUrl": "https://www.linkedin.com/in/ajinkya-ghodekar",
@@ -23,7 +23,7 @@
     {
       "id": 3,
       "name": "MyMagicVilla_API",
-      "description": "A robust .NET Core API for managing hotel booking systems.",
+      "description": "A .NET Core Web API project for hotel and villa booking management, demonstrating RESTful API development and backend application design.",
       "author": "Ajinkya Ghodekar",
       "liveLinkUrl": "",
       "authorUrl": "https://www.linkedin.com/in/ajinkya-ghodekar",
@@ -33,7 +33,7 @@
     {
       "id": 4,
       "name": "Authentication Service",
-      "description": "An ASP.NET MVC application providing secure user authentication and authorization.",
+      "description": "An ASP.NET MVC authentication application demonstrating user authentication, authorization, and secure access control.",
       "author": "Ajinkya Ghodekar",
       "liveLinkUrl": "",
       "authorUrl": "https://www.linkedin.com/in/ajinkya-ghodekar",
@@ -44,75 +44,81 @@
   "skills": [
     {
       "id": 1,
-      "name": "C#"
+      "name": "Backend Development",
+      "description": "Building APIs and maintainable enterprise applications.",
+      "skills": [
+        "C#",
+        ".NET",
+        "ASP.NET Core",
+        "ASP.NET MVC",
+        "REST APIs",
+        "Entity Framework Core",
+        "LINQ"
+      ]
     },
     {
       "id": 2,
-      "name": ".NET"
+      "name": "Frontend Development",
+      "description": "Creating responsive, component-based user interfaces.",
+      "skills": [
+        "React.js",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "Bootstrap"
+      ]
     },
     {
       "id": 3,
-      "name": ".NET Core"
+      "name": "Cloud & DevOps",
+      "description": "Deploying applications and automating delivery pipelines.",
+      "skills": [
+        "Microsoft Azure",
+        "Azure App Service",
+        "Azure Key Vault",
+        "Azure SQL",
+        "Azure DevOps",
+        "YAML CI/CD"
+      ]
     },
     {
       "id": 4,
-      "name": "ASP.NET MVC"
+      "name": "Database & Testing",
+      "description": "Working with data, API validation, and application quality.",
+      "skills": [
+        "SQL Server",
+        "Oracle Database",
+        "Query Optimization",
+        "Unit Testing",
+        "Swagger",
+        "Postman"
+      ]
     },
     {
       "id": 5,
-      "name": "EF Core and LINQ"
+      "name": "Architecture & Engineering",
+      "description": "Applying sound design and engineering practices.",
+      "skills": [
+        "Microservices",
+        "Clean Architecture",
+        "SOLID Principles",
+        "Design Patterns",
+        "Code Reviews",
+        "Performance Optimization"
+      ]
     },
     {
       "id": 6,
-      "name": "MS SQL"
-    },
-    {
-      "id": 7,
-      "name": "React Js"
-    },
-    {
-      "id": 8,
-      "name": "HTML, CSS"
-    },
-    {
-      "id": 9,
-      "name": "JavaScript"
-    },
-    {
-      "id": 10,
-      "name": "GitHub"
-    },
-    {
-      "id": 11,
-      "name": "REST APIs"
-    },
-    {
-      "id": 12,
-      "name": "MicroSoft Azure"
-    },
-    {
-      "id": 13,
-      "name": "Agile Methodologies"
-    },
-    {
-      "id": 14,
-      "name": "Unit Testing"
-    },
-    {
-      "id": 15,
-      "name": "Docker"
-    },
-    {
-      "id": 16,
-      "name": "Kubernetes"
-    },
-    {
-      "id": 17,
-      "name": "CI/CD"
-    },
-    {
-      "id": 18,
-      "name": "Jenkins"
+      "name": "Automation & AI",
+      "description": "Supporting automation and NLP-related workflows.",
+      "skills": [
+        "Python",
+        "PowerShell",
+        "NLP",
+        "DLP Policy",
+        "Named Entity Recognition (NER)",
+        "Model Evaluation"
+      ]
     }
   ],
   "education": [
@@ -141,54 +147,79 @@
   "workExperience": [
     {
       "id": 1,
-      "jobTitle": "Senior Software Developer",
-      "company": "Kellton",
-      "startDate": "Jan 2024",
+      "jobTitle": "Senior Software Engineer",
+      "company": "Centific Global Technologies India Pvt Ltd",
+      "startDate": "May 2026",
       "endDate": "Present",
       "location": "Hyderabad, Telangana, India",
-      "description": "Leading backend development for enterprise HRMS applications, designing scalable APIs, reviewing code, and mentoring junior developers while ensuring performance, security, and best coding practices.",
+      "description": "Working on .NET and React applications, building Azure DevOps YAML CI/CD pipelines, integrating Azure services, and developing automation workflows using Python, PowerShell, and .NET. Contributing to AI/NLP workflows, Named Entity Recognition (NER), and model evaluation processes.",
       "skills": [
         "C#",
-        ".NET CORE",
-        "ASP.NET MVC",
-        "REST APIs",
-        "MicroSoft SQL Database",
-        "REACT JS",
+        ".NET",
+        "ASP.NET Core",
+        "ReactJS",
         "Microsoft Azure",
-        "Oracle Database",
-        "GitHub",
-        "LINQ",
-        "EF CORE",
-        "Code Review"
+        "Azure DevOps",
+        "CI/CD Pipelines",
+        "Azure App Service",
+        "Azure Key Vault",
+        "Azure SQL",
+        "Python",
+        "PowerShell",
+        "NLP",
+        "NER"
       ]
     },
     {
       "id": 2,
-      "jobTitle": "Software Engineer",
-      "company": "Kellton",
-      "startDate": "Dec 2021",
-      "endDate": "Jan 2024",
+      "jobTitle": "Senior Software Developer",
+      "company": "Kellton Tech Solutions Ltd",
+      "startDate": "Jan 2024",
+      "endDate": "Apr 2026",
       "location": "Hyderabad, Telangana, India",
-      "description": "Developed and maintained backend modules using .NET technologies, implemented RESTful APIs, optimized database queries, and collaborated closely with frontend and QA teams to deliver reliable business solutions.",
+      "description": "Developed and maintained enterprise HRMS applications, designed REST APIs, optimized database queries, and contributed to code reviews, application performance, and maintainable software architecture. Collaborated with cross-functional teams to deliver reliable business solutions.",
       "skills": [
         "C#",
-        ".NET CORE",
+        ".NET Core",
         "ASP.NET MVC",
         "REST APIs",
-        "MicroSoft SQL Database",
+        "Microsoft SQL Server",
+        "ReactJS",
+        "Microsoft Azure",
+        "Oracle Database",
         "GitHub",
         "LINQ",
-        "EF CORE"
+        "Entity Framework Core",
+        "Code Reviews"
       ]
     },
     {
       "id": 3,
+      "jobTitle": "Software Engineer",
+      "company": "Kellton Tech Solutions Ltd",
+      "startDate": "Dec 2021",
+      "endDate": "Jan 2024",
+      "location": "Hyderabad, Telangana, India",
+      "description": "Developed backend modules using .NET technologies, implemented RESTful APIs, optimized SQL queries, and collaborated with frontend developers and QA teams to deliver reliable enterprise applications.",
+      "skills": [
+        "C#",
+        ".NET Core",
+        "ASP.NET MVC",
+        "REST APIs",
+        "Microsoft SQL Server",
+        "GitHub",
+        "LINQ",
+        "Entity Framework Core"
+      ]
+    },
+    {
+      "id": 4,
       "jobTitle": "Software Engineering Trainee",
-      "company": "Kellton",
+      "company": "Kellton Tech Solutions Ltd",
       "startDate": "Aug 2021",
       "endDate": "Dec 2021",
       "location": "Hyderabad, Telangana, India",
-      "description": "Worked as a .NET Trainee, gaining hands-on experience in backend development, application integration, and enterprise-level software solutions.",
+      "description": "Gained hands-on experience in C# and .NET development, backend programming, REST API fundamentals, application integration, and enterprise software development practices.",
       "skills": [
         "C#",
         ".NET Core",

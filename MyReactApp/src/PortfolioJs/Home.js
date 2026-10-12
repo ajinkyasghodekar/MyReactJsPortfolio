@@ -1,77 +1,176 @@
+
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'animate.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../PortfolioStyle/Home.css';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
+
+const RESUME_URL =
+    'https://drive.google.com/uc?export=download&id=1rRbl3N-1MerVIADxGpUbHVEfwViKze9Q';
+
+const technologies = [
+    'C# / .NET',
+    'ASP.NET Core',
+    'ReactJS',
+    'Microsoft Azure',
+    'Azure DevOps',
+    'SQL Server'
+];
 
 function Home() {
-    const text = "Hi, I'm ";
-    const name = "Ajinkya Ghodekar";
+    const shouldReduceMotion = useReducedMotion();
+
+    const reveal = {
+        hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: shouldReduceMotion ? 0 : 0.65,
+                ease: 'easeOut'
+            }
+        }
+    };
 
     return (
         <section
             id="home"
-            className="Home d-flex align-items-center text-center text-white position-relative"
-            style={{ minHeight: '100vh', overflow: 'hidden' }}
+            className="Home hero-section d-flex align-items-center text-white position-relative"
+            aria-labelledby="hero-title"
         >
-            {/* Animated gradient background */}
-            <div className="animated-bg"></div>
+            {/* Animated background */}
+            <div className="animated-bg" aria-hidden="true" />
 
-            {/* Floating blobs */}
-            <div className="blob blob-1"></div>
-            <div className="blob blob-2"></div>
-            <div className="blob blob-3"></div>
+            {/* Floating decorative elements */}
+            <div className="blob blob-1" aria-hidden="true" />
+            <div className="blob blob-2" aria-hidden="true" />
+            <div className="blob blob-3" aria-hidden="true" />
 
-            <div className="container position-relative" style={{ zIndex: 2 }}>
-                {/* Typewriter effect */}
-                <h1 className="fw-bold mb-3 hero-title">
-                    {text.split("").map((char, index) => (
-                        <motion.span
-                            key={index}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: index * 0.05 }}
+            <div className="container hero-container position-relative">
+                <div className="row justify-content-center">
+                    <div className="col-12 col-xl-10 text-center">
+
+                        <motion.p
+                            className="hero-eyebrow"
+                            variants={reveal}
+                            initial="hidden"
+                            animate="visible"
                         >
-                            {char}
-                        </motion.span>
-                    ))}
-                    <span className="gradient-text">
-                        {name.split("").map((char, index) => (
-                            <motion.span
-                                key={index + text.length}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: (index + text.length) * 0.05 }}
+                            <span className="status-dot" />
+                            SENIOR SOFTWARE ENGINEER
+                        </motion.p>
+
+                        <motion.h1
+                            id="hero-title"
+                            className="hero-title fw-bold"
+                            variants={reveal}
+                            initial="hidden"
+                            animate="visible"
+                            transition={{ delay: shouldReduceMotion ? 0 : 0.1 }}
+                        >
+                            Hi, I'm
+                            <span className="gradient-text hero-name">
+                                {' '}Ajinkya Ghodekar
+                            </span>
+                        </motion.h1>
+
+                        <motion.h2
+                            className="hero-role"
+                            variants={reveal}
+                            initial="hidden"
+                            animate="visible"
+                            transition={{ delay: shouldReduceMotion ? 0 : 0.2 }}
+                        >
+                            Senior .NET Full Stack Developer
+                        </motion.h2>
+
+                        <motion.p
+                            className="hero-desc mx-auto"
+                            variants={reveal}
+                            initial="hidden"
+                            animate="visible"
+                            transition={{ delay: shouldReduceMotion ? 0 : 0.3 }}
+                        >
+                            Building scalable enterprise applications with
+                            C#, ASP.NET Core, ReactJS, and Microsoft Azure.
+                            Experienced in CI/CD automation, cloud
+                            integrations, and AI/NLP evaluation workflows.
+                        </motion.p>
+
+                        <motion.div
+                            className="hero-tech-stack d-flex justify-content-center flex-wrap"
+                            variants={reveal}
+                            initial="hidden"
+                            animate="visible"
+                            transition={{ delay: shouldReduceMotion ? 0 : 0.4 }}
+                            aria-label="Core technologies"
+                        >
+                            {technologies.map((technology) => (
+                                <span className="tech-chip" key={technology}>
+                                    {technology}
+                                </span>
+                            ))}
+                        </motion.div>
+
+                        <motion.div
+                            className="hero-actions d-flex justify-content-center align-items-center flex-wrap"
+                            variants={reveal}
+                            initial="hidden"
+                            animate="visible"
+                            transition={{ delay: shouldReduceMotion ? 0 : 0.5 }}
+                        >
+                            <a
+                                href="#projects"
+                                className="btn ai-btn-primary btn-lg"
                             >
-                                {char}
+                                View Projects
+                                <i
+                                    className="bi bi-arrow-up-right ms-2"
+                                    aria-hidden="true"
+                                />
+                            </a>
 
-                            </motion.span>
-                        ))}
-                    </span>
-                </h1>
+                            <a
+                                href={RESUME_URL}
+                                className="btn ai-btn-outline btn-lg"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <i
+                                    className="bi bi-file-earmark-pdf me-2"
+                                    aria-hidden="true"
+                                />
+                                Download Resume
+                            </a>
 
-                <motion.h4
-                    className="mb-4 hero-subtitle"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1.5 }}
-                >
-                    C# .NET Developer • Full‑Stack Engineer • Problem Solver
-                </motion.h4>
+                            <a
+                                href="#contact"
+                                className="btn hero-contact-link"
+                            >
+                                Let's Connect
+                                <i
+                                    className="bi bi-arrow-right ms-2"
+                                    aria-hidden="true"
+                                />
+                            </a>
+                        </motion.div>
 
-                <motion.div
-                    className="mt-4 d-flex justify-content-center gap-3 flex-wrap"
-                    initial={{ scale: 0.9, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ delay: 2.5 }}
-                >
-                    <a href="#projects" className="btn ai-btn-primary btn-lg px-4">
-                        View Projects
-                    </a>
-                    <a href="#contact" className="btn ai-btn-outline btn-lg px-4">
-                        Contact Me
-                    </a>
-                </motion.div>
+                        <motion.div
+                            className="hero-footer-note"
+                            variants={reveal}
+                            initial="hidden"
+                            animate="visible"
+                            transition={{ delay: shouldReduceMotion ? 0 : 0.6 }}
+                        >
+                            <span>Full-Stack Development</span>
+                            <span className="hero-separator">·</span>
+                            <span>Cloud & DevOps</span>
+                            <span className="hero-separator">·</span>
+                            <span>AI-Enabled Workflows</span>
+                        </motion.div>
+
+                    </div>
+                </div>
             </div>
         </section>
     );
