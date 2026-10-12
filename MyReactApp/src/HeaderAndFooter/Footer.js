@@ -1,51 +1,106 @@
+
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+    FaLinkedinIn,
+    FaGithub,
+    FaHackerrank,
+    FaEnvelope,
+    FaInstagram,
+    FaFacebookF,
+    FaHeart
+} from 'react-icons/fa';
 import '../PortfolioStyle/Footer.css';
 
+const socialLinks = [
+    {
+        name: 'LinkedIn',
+        url: 'https://www.linkedin.com/in/ajinkya-ghodekar',
+        icon: FaLinkedinIn
+    },
+    {
+        name: 'GitHub',
+        url: 'https://github.com/ajinkyasghodekar',
+        icon: FaGithub
+    },
+    {
+        name: 'HackerRank',
+        url: 'https://www.hackerrank.com/profile/ajinkyasghodekar',
+        icon: FaHackerrank
+    },
+    {
+        name: 'Email',
+        url: 'mailto:ajinkyasghodekar@gmail.com',
+        icon: FaEnvelope
+    },
+    {
+        name: 'Instagram',
+        url: 'https://www.instagram.com/ajinkya.ghodekar/',
+        icon: FaInstagram
+    },
+    {
+        name: 'Facebook',
+        url: 'https://www.facebook.com/people/Ajinkya-Ghodekar/pfbid0eWcC4UVgqN2mCJnumMhMTwAnCweLdRoGGDjhmhr8jvMkerHdQCxYBq14peKn9bEHl/',
+        icon: FaFacebookF
+    }
+];
+
 function Footer() {
+    const currentYear = new Date().getFullYear();
+
     return (
-        <footer className="footer">
-            {/* Animated Background */}
-            <div className="animated-bg"></div>
+        <footer className="portfolio-footer">
+            <div className="footer-background" aria-hidden="true">
+                <div className="footer-glow footer-glow-left"></div>
+                <div className="footer-glow footer-glow-right"></div>
+            </div>
 
-            {/* Floating Blobs */}
-            <div className="blob blob-1"></div>
-            <div className="blob blob-2"></div>
-            <div className="blob blob-3"></div>
+            <div className="container footer-content">
+                <a href="#home" className="footer-brand">
+                    <span className="footer-brand-mark">AG</span>
+                    <span>
+                        Ajinkya <strong>Ghodekar</strong>
+                    </span>
+                </a>
 
-            {/* Content */}
-            <div className="footer-content container">
-
-                <div className="footer-socials">
-                    <a href="https://www.linkedin.com/in/ajinkya-ghodekar" target="_blank" rel="noopener noreferrer" className="social-icon">
-                        <i className="fab fa-linkedin"></i>
-                    </a>
-
-                    <a href="https://github.com/ajinkyasghodekar" target="_blank" rel="noopener noreferrer" className="social-icon">
-                        <i className="fab fa-github"></i>
-                    </a>
-
-                    <a href="https://www.hackerrank.com/profile/ajinkyasghodekar" target="_blank" rel="noopener noreferrer" className="social-icon">
-                        <i className="fab fa-hackerrank"></i>
-                    </a>
-
-                    <a href="mailto:ajinkyasghodekar@gmail.com" className="social-icon">
-                        <i className="fas fa-envelope"></i>
-                    </a>
-
-                    <a href="https://www.instagram.com/ajinkya.ghodekar/" target="_blank" rel="noopener noreferrer" className="social-icon">
-                        <i className="fab fa-instagram"></i>
-                    </a>
-
-                    <a href="https://www.facebook.com/people/Ajinkya-Ghodekar/pfbid0eWcC4UVgqN2mCJnumMhMTwAnCweLdRoGGDjhmhr8jvMkerHdQCxYBq14peKn9bEHl/" target="_blank" rel="noopener noreferrer" className="social-icon">
-                        <i className="fab fa-facebook"></i>
-                    </a>
-                </div>
-
-                <p className="footer-text">
-                    &copy; 2026 MyReactJsPortfolio. All rights reserved.
+                <p className="footer-tagline">
+                    Building reliable applications with .NET, React, Azure,
+                    and a passion for solving problems.
                 </p>
 
+                <nav className="footer-socials" aria-label="Social media links">
+                    {socialLinks.map(({ name, url, icon: Icon }) => (
+                        <a
+                            key={name}
+                            href={url}
+                            className="footer-social-link"
+                            aria-label={name}
+                            title={name}
+                            target={url.startsWith('mailto:') ? undefined : '_blank'}
+                            rel={
+                                url.startsWith('mailto:')
+                                    ? undefined
+                                    : 'noopener noreferrer'
+                            }
+                        >
+                            <Icon aria-hidden="true" />
+                        </a>
+                    ))}
+                </nav>
+
+                <div className="footer-divider"></div>
+
+                <div className="footer-bottom">
+                    <p className="footer-copyright">
+                        &copy; {currentYear} Ajinkya Ghodekar.
+                        All rights reserved.
+                    </p>
+
+                    <p className="footer-made-with">
+                        Designed with <FaHeart aria-hidden="true" /> and built
+                        with <span>React</span>
+                    </p>
+                </div>
             </div>
         </footer>
     );

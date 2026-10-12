@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../PortfolioStyle/Education.css';
 
@@ -8,52 +9,148 @@ function Education() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('https://localhost:7083/api/Education')
-            .then(response => {
+        let isMounted = true;
+
+        const fetchEducation = async () => {
+            try {
+                const response = await axios.get(
+                    'https://localhost:7083/api/Education'
+                );
+
                 const { status, data } = response;
-                if (status === 200 && data.isSuccess) {
-                    setEducation(data.result || []);
-                    setErrorMessage('');
+
+                if (status === 200 && data?.isSuccess) {
+                    if (isMounted) {
+                        setEducation(data.result || []);
+                        setErrorMessage('');
+                    }
                 } else {
-                    setErrorMessage(data.message || 'Failed to load education details. Please try again.');
+                    throw new Error(
+                        data?.message || 'Unable to load education details.'
+                    );
                 }
-            })
-            .catch(() => {
-                setEducation(require('../fallbackData.json').education);
-            })
-            .finally(() => {
-                setLoading(false);
-            });
+            } catch (error) {
+                // Use local fallback data when the API is unavailable.
+                try {
+                    const fallbackData =
+                        require('../fallbackData.json').education || [];
+
+                    if (isMounted) {
+                        setEducation(fallbackData);
+                        setErrorMessage(
+                            fallbackData.length
+                                ? ''
+                                : 'Education details are currently unavailable.'
+                        );
+                    }
+                } catch {
+                    if (isMounted) {
+                        setEducation([]);
+                        setErrorMessage(
+                            'Unable to load education details. Please try again later.'
+                        );
+                    }
+                }
+            } finally {
+                if (isMounted) {
+                    setLoading(false);
+                }
+            }
+        };
+
+        fetchEducation();
+
+        return () => {
+            isMounted = false;
+        };
     }, []);
 
     return (
-        <section id="education" className="container">
+        <section
+            id="education"
+            className="education-section position-relative"
+            aria-labelledby="education-title"
+        >
+            <div className="education-bg" aria-hidden="true" />
 
-            {/* AI Background Glow */}
-            <div className="education-bg"></div>
+            <div className="container education-container">
+                <div className="education-heading text-center">
+                    <span className="education-eyebrow">
+                        MY ACADEMIC BACKGROUND
+                    </span>
 
-            <h4 className="text-center">Education</h4>
+                    <h2 id="education-title">
+                        Education <span className="education-accent">.</span>
+                    </h2>
 
-            {loading && (
-                <p className="text-center text-secondary">Loading education details...</p>
-            )}
-            {errorMessage && (
-                <p className="text-center text-danger">{errorMessage}</p>
-            )}
+                    <p>
+                        The academic foundation behind my technical journey
+                        and continued learning.
+                    </p>
+                </div>
 
-            <div className="timeline">
-                {education.length > 0 ? (
-                    education.map((edu) => (
-                        <div key={edu.id} className="timeline-item">
-                            <h5>{edu.educationType} - {edu.branch}</h5>
-                            <p><b>University:</b> {edu.university}</p>
-                            <p><b>Pass Out Year:</b> {edu.passOutYear}</p>
-                        </div>
-                    ))
-                ) : (
-                    !loading && (
-                        <p className="text-center text-warning">No education details found.</p>
-                    )
+                {loading && (
+                    <div className="education-status" role="status">
+                        <span className="education-loader" />
+                        Loading education details...
+                    </div>
+                )}
+
+                {!loading && errorMessage && (
+                    <p className="education-message" role="status">
+                        {errorMessage}
+                    </p>
+                )}
+
+                {!loading && education.length > 0 && (
+                    <div className="education-timeline">
+                        {education.map((edu, index) => (
+                            <article
+                                className="education-card"
+                                key={edu.id ?? `${edu.educationType}-${index}`}
+                            >
+                                <div className="education-marker">
+                                    <span className="education-marker-inner" />
+                                </div>
+
+                                <div className="education-card-content">
+                                    <span className="education-number">
+                                        {String(index + 1).padStart(2, '0')}
+                                    </span>
+
+                                    <h3>
+                                        {edu.educationType}
+                                    </h3>
+
+                                    {edu.branch && (
+                                        <p className="education-branch">
+                                            {edu.branch}
+                                        </p>
+                                    )}
+
+                                    {edu.university && (
+                                        <p className="education-detail">
+                                            <span>University / Institution</span>
+                                            {edu.university}
+                                        </p>
+                                    )}
+
+                                    {edu.passOutYear && (
+                                        <div className="education-year">
+                                            <span className="education-year-dot" />
+                                            Graduated in {edu.passOutYear}
+                                        </div>
+                                    )}
+                                </div>
+                            </article>
+                        ))}
+                    </div>
+                )}
+
+                {!loading && !errorMessage && education.length === 0 && (
+                    <p className="education-message">
+                        No education details found.
+                    </p>
                 )}
             </div>
         </section>

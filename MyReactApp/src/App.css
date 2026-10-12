@@ -1,163 +1,270 @@
-﻿.App {
-    text-align: center;
-    padding: 0.5rem;
-    background: #f0f4f8;
+﻿
+/* ==============================
+   GLOBAL APP FOUNDATION
+============================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    background: #0b1020;
+    color: #e5e7eb;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
     min-height: 100vh;
-    scroll-behavior: auto;
 }
 
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 1s ease forwards;
+.App {
+    position: relative;
+    min-height: 100vh;
+    overflow: clip;
+    background: #0b1020;
 }
 
-.fade-out {
-    opacity: 0;
+/* ==============================
+   SECTION NAVIGATION OFFSET
+============================== */
+
+/* Keep target sections visible beneath the sticky navbar */
+#home,
+#about,
+#education,
+#skills,
+#projects,
+#work-experience,
+#contact,
+#download-resume {
+    scroll-margin-top: 85px;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
+/* ==============================
+   SCROLL PROGRESS
+============================== */
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.go-to-top {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #28a745, #1e7e34);
-    color: #fff;
-    border: none;
-    font-size: 22px;
-    cursor: pointer;
-    z-index: 1000;
-    box-shadow: 0 10px 25px rgba(40, 167, 69, 0.35);
-    transition: all 0.3s ease-in-out;
-}
-
-    .go-to-top:hover {
-        transform: translateY(-4px) scale(1.1);
-        box-shadow: 0 15px 30px rgba(40, 167, 69, 0.5);
-    }
-
-button {
-    transition: all 0.3s ease-in-out;
-}
-
-    button:hover {
-        transform: translateY(-2px);
-    }
-
-.progress-bar {
+.app-scroll-progress {
     position: fixed;
     top: 0;
     left: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #28a745, #20c997);
-    z-index: 9999;
-    transition: width 0.2s ease-in-out;
+    z-index: 10000;
+    height: 3px;
+    background: linear-gradient( 90deg, #6366f1 0%, #818cf8 45%, #38bdf8 100% );
+    box-shadow: 0 0 12px rgba(99, 102, 241, 0.35);
+    pointer-events: none;
+    transition: width 0.12s linear;
 }
 
-/*section {
-    padding: 60px 0;
-}*/
+/* ==============================
+   RESUME SECTION
+============================== */
 
-.glass {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    padding: 30px;
-}
-
-footer {
-    background: #111;
-    color: #aaa;
-}
-
-    footer a {
-        color: #fff;
-        transition: color 0.3s ease;
-    }
-
-        footer a:hover {
-            color: #28a745;
-            text-decoration: none;
-        }
-
-#download-resume {
-    margin-top: 30px;
+.resume-section {
     position: relative;
-    padding: 20px;
-    background: #f0f4f8;
+    isolation: isolate;
     overflow: hidden;
+    padding: 90px 20px;
+    border-top: 1px solid rgba(148, 163, 184, 0.12);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+    color: #e5e7eb;
+    background: #0b1020;
+    text-align: center;
 }
 
-.download-bg {
+.resume-background {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 20% 20%, rgba(99,102,241,0.15), transparent 50%), radial-gradient(circle at 80% 80%, rgba(56,189,248,0.15), transparent 50%);
-    pointer-events: none; 
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
 }
 
-.download-content {
+.resume-glow {
+    position: absolute;
+    width: 330px;
+    height: 250px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.15;
+}
+
+.resume-glow-left {
+    top: -100px;
+    left: 10%;
+    background: #6366f1;
+}
+
+.resume-glow-right {
+    right: 8%;
+    bottom: -130px;
+    background: #06b6d4;
+}
+
+.resume-content {
     position: relative;
     z-index: 1;
+    max-width: 760px;
 }
 
-/* Heading */
-#download-resume h4 {
+.resume-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 22px;
+    border: 1px solid rgba(165, 180, 252, 0.25);
+    border-radius: 18px;
+    color: #c7d2fe;
+    background: rgba(99, 102, 241, 0.12);
+    font-size: 1.45rem;
+}
+
+.resume-eyebrow {
+    display: inline-block;
+    color: #818cf8;
+    font-size: 0.76rem;
     font-weight: 700;
-    font-size: 2rem;
-    position: relative;
-    display: inline-block;
-    padding-bottom: 10px;
-    margin-bottom: 50px;
-    color: #333;
+    letter-spacing: 2.5px;
 }
 
-    #download-resume h4::after {
-        content: '';
-        position: absolute;
-        width: 60%;
-        height: 4px;
-        background: linear-gradient(90deg, #6366f1, #22c55e);
-        left: 20%;
-        bottom: 0;
-        border-radius: 5px;
+.resume-content h2 {
+    margin: 16px 0;
+    color: #f8fafc;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -1.2px;
+    line-height: 1.2;
+}
+
+    .resume-content h2 span {
+        color: #a5b4fc;
     }
 
-/* Description */
-#download-resume p {
-    color: #555;
-    margin-bottom: 30px;
-    font-size: 1.05rem;
+.resume-description {
+    max-width: 570px;
+    margin: 0 auto 28px;
+    color: #9ca3af;
+    font-size: 1rem;
+    line-height: 1.8;
 }
 
-.download-btn {
-    background: linear-gradient(135deg, #6366f1, #22c55e);
-    border: none;
-    border-radius: 999px;
-    padding: 10px 30px;
-    font-weight: 600;
+.resume-download-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    min-height: 50px;
+    padding: 13px 25px;
+    border: 1px solid rgba(165, 180, 252, 0.2);
+    border-radius: 12px;
     color: #fff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+    background: linear-gradient( 110deg, #6366f1, #4f46e5 60%, #0284c7 );
+    font-size: 0.92rem;
+    font-weight: 700;
     text-decoration: none;
-    display: inline-block;
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.2);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-    .download-btn:hover {
+    .resume-download-btn:hover {
         transform: translateY(-3px);
-        box-shadow: 0 12px 30px rgba(99,102,241,0.45);
         color: #fff;
+        box-shadow: 0 13px 32px rgba(79, 70, 229, 0.35);
     }
+
+    .resume-download-btn:focus-visible {
+        outline: 2px solid #a5b4fc;
+        outline-offset: 4px;
+    }
+
+/* ==============================
+   BACK TO TOP BUTTON
+============================== */
+
+.go-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 9998;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(165, 180, 252, 0.3);
+    border-radius: 15px;
+    color: #fff;
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+    .go-to-top:hover {
+        transform: translateY(-4px);
+        background: linear-gradient(135deg, #818cf8, #2563eb);
+        box-shadow: 0 12px 30px rgba(79, 70, 229, 0.4);
+    }
+
+    .go-to-top:focus-visible {
+        outline: 2px solid #c7d2fe;
+        outline-offset: 4px;
+    }
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+
+@media (max-width: 576px) {
+    .resume-section {
+        padding: 65px 18px;
+    }
+
+    .resume-description {
+        font-size: 0.92rem;
+    }
+
+    .resume-download-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .go-to-top {
+        right: 16px;
+        bottom: 16px;
+        width: 44px;
+        height: 44px;
+        border-radius: 13px;
+    }
+}
+
+/* ==============================
+   ACCESSIBILITY
+============================== */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
